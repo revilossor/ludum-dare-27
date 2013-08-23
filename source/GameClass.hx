@@ -2,6 +2,7 @@ package;
 
 import flash.Lib;
 import org.flixel.FlxGame;
+import states.MenuState;
 	
 class GameClass extends FlxGame
 {	
