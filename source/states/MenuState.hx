@@ -21,6 +21,7 @@ class MenuState extends FlxState
 		Util.log(this, "init");
 		set_useMouse(true);
 		super.create();
+		
 	}
 	
 	override public function destroy():Void
