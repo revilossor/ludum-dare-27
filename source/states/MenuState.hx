@@ -18,7 +18,8 @@ class MenuState extends FlxState
 	override public function create():Void
 	{
 		FlxG.bgColor = 0xffff00ff;
-		trace("init");
+		Util.log(this, "init");
+		set_useMouse(true);
 		super.create();
 	}
 	
