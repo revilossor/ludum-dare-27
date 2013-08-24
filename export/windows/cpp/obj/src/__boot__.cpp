@@ -3,7 +3,10 @@
 #include <sys/io/FileOutput.h>
 #include <sys/io/File.h>
 #include <sys/FileSystem.h>
+#include <states/WinState.h>
+#include <states/PlatformerState.h>
 #include <states/MenuState.h>
+#include <states/GameOverState.h>
 #include <org/flixel/util/FlxTimer.h>
 #include <org/flixel/util/FlxString.h>
 #include <org/flixel/util/FlxRandom.h>
@@ -62,6 +65,7 @@
 #include <org/flixel/plugin/pxText/PxBitmapFont.h>
 #include <org/flixel/plugin/TimerManager.h>
 #include <org/flixel/plugin/DebugPathDisplay.h>
+#include <org/flixel/addons/FlxTilemapExt.h>
 #include <org/flixel/FlxTilemap.h>
 #include <org/flixel/FlxText.h>
 #include <org/flixel/FlxSubState.h>
@@ -70,17 +74,10 @@
 #include <org/flixel/FlxSound.h>
 #include <org/flixel/FlxSave.h>
 #include <org/flixel/FlxPath.h>
-#include <org/flixel/FlxGroup.h>
-#include <org/flixel/FlxTypedGroup.h>
 #include <org/flixel/FlxG.h>
 #include <org/flixel/FlxCamera.h>
 #include <org/flixel/FlxButton.h>
 #include <org/flixel/FlxTypedButton.h>
-#include <org/flixel/FlxSprite.h>
-#include <org/flixel/FlxObject.h>
-#include <org/flixel/util/FlxPoint.h>
-#include <org/flixel/util/FlxRect.h>
-#include <org/flixel/FlxBasic.h>
 #include <org/flixel/FlxAssets.h>
 #include <openfl/utils/WeakRef.h>
 #include <openfl/events/SystemEvent.h>
@@ -104,6 +101,7 @@
 #include <haxe/Resource.h>
 #include <haxe/Log.h>
 #include <haxe/Json.h>
+#include <flash/utils/Timer.h>
 #include <flash/utils/Endian.h>
 #include <flash/utils/CompressionAlgorithm.h>
 #include <flash/utils/ByteArray.h>
@@ -144,11 +142,11 @@
 #include <flash/geom/Vector3D.h>
 #include <flash/geom/Transform.h>
 #include <flash/geom/Rectangle.h>
-#include <flash/geom/Point.h>
 #include <flash/geom/Matrix.h>
 #include <flash/geom/ColorTransform.h>
 #include <flash/filters/BitmapFilter.h>
 #include <flash/filesystem/File.h>
+#include <flash/events/TimerEvent.h>
 #include <flash/events/SampleDataEvent.h>
 #include <flash/events/ProgressEvent.h>
 #include <flash/events/KeyboardEvent.h>
@@ -194,6 +192,11 @@
 #include <flash/display/Bitmap.h>
 #include <flash/_Vector/Vector_Impl_.h>
 #include <flash/Memory.h>
+#include <entities/PlatformerPlayer.h>
+#include <org/flixel/FlxSprite.h>
+#include <org/flixel/FlxObject.h>
+#include <org/flixel/util/FlxPoint.h>
+#include <org/flixel/util/FlxRect.h>
 #include <cpp/zip/Uncompress.h>
 #include <cpp/zip/Flush.h>
 #include <cpp/zip/Compress.h>
@@ -201,10 +204,18 @@
 #include <cpp/rtti/FieldNumericIntegerLookup.h>
 #include <Xml.h>
 #include <XmlType.h>
+#include <Util.h>
 #include <Type.h>
 #include <ValueType.h>
 #include <StringTools.h>
 #include <StringBuf.h>
+#include <Room.h>
+#include <org/flixel/FlxGroup.h>
+#include <org/flixel/FlxTypedGroup.h>
+#include <org/flixel/FlxBasic.h>
+#include <Reg.h>
+#include <Resourses.h>
+#include <flash/geom/Point.h>
 #include <Reflect.h>
 #include <IMap.h>
 #include <List.h>
@@ -239,7 +250,10 @@ hx::RegisterResources( hx::GetResources() );
 ::sys::io::FileOutput_obj::__register();
 ::sys::io::File_obj::__register();
 ::sys::FileSystem_obj::__register();
+::states::WinState_obj::__register();
+::states::PlatformerState_obj::__register();
 ::states::MenuState_obj::__register();
+::states::GameOverState_obj::__register();
 ::org::flixel::util::FlxTimer_obj::__register();
 ::org::flixel::util::FlxString_obj::__register();
 ::org::flixel::util::FlxRandom_obj::__register();
@@ -298,6 +312,7 @@ hx::RegisterResources( hx::GetResources() );
 ::org::flixel::plugin::pxText::PxBitmapFont_obj::__register();
 ::org::flixel::plugin::TimerManager_obj::__register();
 ::org::flixel::plugin::DebugPathDisplay_obj::__register();
+::org::flixel::addons::FlxTilemapExt_obj::__register();
 ::org::flixel::FlxTilemap_obj::__register();
 ::org::flixel::FlxText_obj::__register();
 ::org::flixel::FlxSubState_obj::__register();
@@ -306,17 +321,10 @@ hx::RegisterResources( hx::GetResources() );
 ::org::flixel::FlxSound_obj::__register();
 ::org::flixel::FlxSave_obj::__register();
 ::org::flixel::FlxPath_obj::__register();
-::org::flixel::FlxGroup_obj::__register();
-::org::flixel::FlxTypedGroup_obj::__register();
 ::org::flixel::FlxG_obj::__register();
 ::org::flixel::FlxCamera_obj::__register();
 ::org::flixel::FlxButton_obj::__register();
 ::org::flixel::FlxTypedButton_obj::__register();
-::org::flixel::FlxSprite_obj::__register();
-::org::flixel::FlxObject_obj::__register();
-::org::flixel::util::FlxPoint_obj::__register();
-::org::flixel::util::FlxRect_obj::__register();
-::org::flixel::FlxBasic_obj::__register();
 ::org::flixel::FlxAssets_obj::__register();
 ::openfl::utils::WeakRef_obj::__register();
 ::openfl::events::SystemEvent_obj::__register();
@@ -340,6 +348,7 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::Resource_obj::__register();
 ::haxe::Log_obj::__register();
 ::haxe::Json_obj::__register();
+::flash::utils::Timer_obj::__register();
 ::flash::utils::Endian_obj::__register();
 ::flash::utils::CompressionAlgorithm_obj::__register();
 ::flash::utils::ByteArray_obj::__register();
@@ -380,11 +389,11 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::geom::Vector3D_obj::__register();
 ::flash::geom::Transform_obj::__register();
 ::flash::geom::Rectangle_obj::__register();
-::flash::geom::Point_obj::__register();
 ::flash::geom::Matrix_obj::__register();
 ::flash::geom::ColorTransform_obj::__register();
 ::flash::filters::BitmapFilter_obj::__register();
 ::flash::filesystem::File_obj::__register();
+::flash::events::TimerEvent_obj::__register();
 ::flash::events::SampleDataEvent_obj::__register();
 ::flash::events::ProgressEvent_obj::__register();
 ::flash::events::KeyboardEvent_obj::__register();
@@ -430,6 +439,11 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::display::Bitmap_obj::__register();
 ::flash::_Vector::Vector_Impl__obj::__register();
 ::flash::Memory_obj::__register();
+::entities::PlatformerPlayer_obj::__register();
+::org::flixel::FlxSprite_obj::__register();
+::org::flixel::FlxObject_obj::__register();
+::org::flixel::util::FlxPoint_obj::__register();
+::org::flixel::util::FlxRect_obj::__register();
 ::cpp::zip::Uncompress_obj::__register();
 ::cpp::zip::Flush_obj::__register();
 ::cpp::zip::Compress_obj::__register();
@@ -437,10 +451,18 @@ hx::RegisterResources( hx::GetResources() );
 ::cpp::rtti::FieldNumericIntegerLookup_obj::__register();
 ::Xml_obj::__register();
 ::XmlType_obj::__register();
+::Util_obj::__register();
 ::Type_obj::__register();
 ::ValueType_obj::__register();
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
+::Room_obj::__register();
+::org::flixel::FlxGroup_obj::__register();
+::org::flixel::FlxTypedGroup_obj::__register();
+::org::flixel::FlxBasic_obj::__register();
+::Reg_obj::__register();
+::Resourses_obj::__register();
+::flash::geom::Point_obj::__register();
 ::Reflect_obj::__register();
 ::IMap_obj::__register();
 ::List_obj::__register();
@@ -505,11 +527,24 @@ hx::RegisterResources( hx::GetResources() );
 ::List_obj::__boot();
 ::IMap_obj::__boot();
 ::Reflect_obj::__boot();
+::flash::geom::Point_obj::__boot();
+::Resourses_obj::__boot();
+::Reg_obj::__boot();
+::org::flixel::FlxBasic_obj::__boot();
+::org::flixel::FlxTypedGroup_obj::__boot();
+::org::flixel::FlxGroup_obj::__boot();
+::Room_obj::__boot();
 ::StringBuf_obj::__boot();
 ::StringTools_obj::__boot();
 ::ValueType_obj::__boot();
 ::Type_obj::__boot();
+::Util_obj::__boot();
 ::XmlType_obj::__boot();
+::org::flixel::util::FlxRect_obj::__boot();
+::org::flixel::util::FlxPoint_obj::__boot();
+::org::flixel::FlxObject_obj::__boot();
+::org::flixel::FlxSprite_obj::__boot();
+::entities::PlatformerPlayer_obj::__boot();
 ::flash::Memory_obj::__boot();
 ::flash::_Vector::Vector_Impl__obj::__boot();
 ::flash::display::Bitmap_obj::__boot();
@@ -555,11 +590,11 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::events::KeyboardEvent_obj::__boot();
 ::flash::events::ProgressEvent_obj::__boot();
 ::flash::events::SampleDataEvent_obj::__boot();
+::flash::events::TimerEvent_obj::__boot();
 ::flash::filesystem::File_obj::__boot();
 ::flash::filters::BitmapFilter_obj::__boot();
 ::flash::geom::ColorTransform_obj::__boot();
 ::flash::geom::Matrix_obj::__boot();
-::flash::geom::Point_obj::__boot();
 ::flash::geom::Rectangle_obj::__boot();
 ::flash::geom::Transform_obj::__boot();
 ::flash::geom::Vector3D_obj::__boot();
@@ -600,6 +635,7 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::utils::ByteArray_obj::__boot();
 ::flash::utils::CompressionAlgorithm_obj::__boot();
 ::flash::utils::Endian_obj::__boot();
+::flash::utils::Timer_obj::__boot();
 ::haxe::Json_obj::__boot();
 ::haxe::Resource_obj::__boot();
 ::haxe::Serializer_obj::__boot();
@@ -622,17 +658,10 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::events::SystemEvent_obj::__boot();
 ::openfl::utils::WeakRef_obj::__boot();
 ::org::flixel::FlxAssets_obj::__boot();
-::org::flixel::FlxBasic_obj::__boot();
-::org::flixel::util::FlxRect_obj::__boot();
-::org::flixel::util::FlxPoint_obj::__boot();
-::org::flixel::FlxObject_obj::__boot();
-::org::flixel::FlxSprite_obj::__boot();
 ::org::flixel::FlxTypedButton_obj::__boot();
 ::org::flixel::FlxButton_obj::__boot();
 ::org::flixel::FlxCamera_obj::__boot();
 ::org::flixel::FlxG_obj::__boot();
-::org::flixel::FlxTypedGroup_obj::__boot();
-::org::flixel::FlxGroup_obj::__boot();
 ::org::flixel::FlxPath_obj::__boot();
 ::org::flixel::FlxSave_obj::__boot();
 ::org::flixel::FlxSound_obj::__boot();
@@ -641,6 +670,7 @@ hx::RegisterResources( hx::GetResources() );
 ::org::flixel::FlxSubState_obj::__boot();
 ::org::flixel::FlxText_obj::__boot();
 ::org::flixel::FlxTilemap_obj::__boot();
+::org::flixel::addons::FlxTilemapExt_obj::__boot();
 ::org::flixel::plugin::DebugPathDisplay_obj::__boot();
 ::org::flixel::plugin::TimerManager_obj::__boot();
 ::org::flixel::plugin::pxText::PxBitmapFont_obj::__boot();
@@ -699,7 +729,10 @@ hx::RegisterResources( hx::GetResources() );
 ::org::flixel::util::FlxRandom_obj::__boot();
 ::org::flixel::util::FlxString_obj::__boot();
 ::org::flixel::util::FlxTimer_obj::__boot();
+::states::GameOverState_obj::__boot();
 ::states::MenuState_obj::__boot();
+::states::PlatformerState_obj::__boot();
+::states::WinState_obj::__boot();
 ::sys::FileSystem_obj::__boot();
 ::sys::io::File_obj::__boot();
 ::sys::io::FileOutput_obj::__boot();

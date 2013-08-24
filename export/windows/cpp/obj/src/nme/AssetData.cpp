@@ -388,15 +388,96 @@ Void AssetData_obj::initialize( ){
 				::nme::AssetData_obj::type->set(HX_CSTRING("assets/data/vis/bounds.png"),value);
 			}
 			HX_STACK_LINE(99)
-			::nme::AssetData_obj::path->set(HX_CSTRING("assets/HaxeFlixel.svg"),HX_CSTRING("assets/HaxeFlixel.svg"));
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/gfx/outDoor.png"),HX_CSTRING("assets/gfx/outDoor.png"));
 			HX_STACK_LINE(100)
 			{
 				HX_STACK_LINE(100)
-				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("image").toUpperCase());		HX_STACK_VAR(value,"value");
 				HX_STACK_LINE(100)
-				::nme::AssetData_obj::type->set(HX_CSTRING("assets/HaxeFlixel.svg"),value);
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/gfx/outDoor.png"),value);
+			}
+			HX_STACK_LINE(101)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/gfx/platformer_player.png"),HX_CSTRING("assets/gfx/platformer_player.png"));
+			HX_STACK_LINE(102)
+			{
+				HX_STACK_LINE(102)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("image").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(102)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/gfx/platformer_player.png"),value);
 			}
 			HX_STACK_LINE(103)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/gfx/template_tiles.png"),HX_CSTRING("assets/gfx/template_tiles.png"));
+			HX_STACK_LINE(104)
+			{
+				HX_STACK_LINE(104)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("image").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(104)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/gfx/template_tiles.png"),value);
+			}
+			HX_STACK_LINE(105)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/HaxeFlixel.svg"),HX_CSTRING("assets/HaxeFlixel.svg"));
+			HX_STACK_LINE(106)
+			{
+				HX_STACK_LINE(106)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(106)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/HaxeFlixel.svg"),value);
+			}
+			HX_STACK_LINE(107)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/mapCSV_map_1_tiles.csv"),HX_CSTRING("assets/maps/template/mapCSV_map_1_tiles.csv"));
+			HX_STACK_LINE(108)
+			{
+				HX_STACK_LINE(108)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(108)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/mapCSV_map_1_tiles.csv"),value);
+			}
+			HX_STACK_LINE(109)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/mapCSV_template_map_tiles.csv"),HX_CSTRING("assets/maps/template/mapCSV_template_map_tiles.csv"));
+			HX_STACK_LINE(110)
+			{
+				HX_STACK_LINE(110)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(110)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/mapCSV_template_map_tiles.csv"),value);
+			}
+			HX_STACK_LINE(111)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/map_1.dam"),HX_CSTRING("assets/maps/template/map_1.dam"));
+			HX_STACK_LINE(112)
+			{
+				HX_STACK_LINE(112)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(112)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/map_1.dam"),value);
+			}
+			HX_STACK_LINE(113)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/map_1.dam.bak"),HX_CSTRING("assets/maps/template/map_1.dam.bak"));
+			HX_STACK_LINE(114)
+			{
+				HX_STACK_LINE(114)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(114)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/map_1.dam.bak"),value);
+			}
+			HX_STACK_LINE(115)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/template_map.dam"),HX_CSTRING("assets/maps/template/template_map.dam"));
+			HX_STACK_LINE(116)
+			{
+				HX_STACK_LINE(116)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(116)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/template_map.dam"),value);
+			}
+			HX_STACK_LINE(117)
+			::nme::AssetData_obj::path->set(HX_CSTRING("assets/maps/template/template_map.dam.bak"),HX_CSTRING("assets/maps/template/template_map.dam.bak"));
+			HX_STACK_LINE(118)
+			{
+				HX_STACK_LINE(118)
+				::openfl::AssetType value = ::Reflect_obj::field(hx::ClassOf< ::openfl::AssetType >(),HX_CSTRING("text").toUpperCase());		HX_STACK_VAR(value,"value");
+				HX_STACK_LINE(118)
+				::nme::AssetData_obj::type->set(HX_CSTRING("assets/maps/template/template_map.dam.bak"),value);
+			}
+			HX_STACK_LINE(121)
 			::nme::AssetData_obj::initialized = true;
 		}
 	}

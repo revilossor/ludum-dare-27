@@ -1,5 +1,6 @@
 package;
 
+import flash.geom.Point;
 import org.flixel.FlxSave;
 
 /**
@@ -13,7 +14,10 @@ class Reg
 	 * Generic levels Array that can be used for cross-state stuff.
 	 * Example usage: Storing the levels of a platformer.
 	 */
-	static public var levels:Array<Dynamic> = [];
+	static public var levels:Array<Dynamic> = [	Resourses.template_room, 
+												Resourses.map_1				];
+	static public var entities:Array<Dynamic> = [	Resourses.template_entities,
+													Resourses.map_1_entities		];
 	/**
 	 * Generic level variable that can be used for cross-state stuff.
 	 * Example usage: Storing the current level number.
@@ -40,4 +44,12 @@ class Reg
 	 * your state if you want to use the same save flixel uses internally
 	 */
 	static public var save:FlxSave;
+	
+	static public var startPositions:Array<Point> = [	new Point(193, 609),		
+														new Point(99,257)		];
+	
+	static public var doorPositions:Array<Point> = [	new Point(1280, 672),
+														new Point(801,257)		];
+	static public var roomIndex:Int = 0;
+	
 }

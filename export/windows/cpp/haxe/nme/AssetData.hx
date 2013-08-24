@@ -96,8 +96,26 @@ class AssetData {
 			type.set ("assets/data/vcr/stop.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/data/vis/bounds.png", "assets/data/vis/bounds.png");
 			type.set ("assets/data/vis/bounds.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/gfx/outDoor.png", "assets/gfx/outDoor.png");
+			type.set ("assets/gfx/outDoor.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/gfx/platformer_player.png", "assets/gfx/platformer_player.png");
+			type.set ("assets/gfx/platformer_player.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/gfx/template_tiles.png", "assets/gfx/template_tiles.png");
+			type.set ("assets/gfx/template_tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/HaxeFlixel.svg", "assets/HaxeFlixel.svg");
 			type.set ("assets/HaxeFlixel.svg", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_map_1_tiles.csv", "assets/maps/template/mapCSV_map_1_tiles.csv");
+			type.set ("assets/maps/template/mapCSV_map_1_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_template_map_tiles.csv", "assets/maps/template/mapCSV_template_map_tiles.csv");
+			type.set ("assets/maps/template/mapCSV_template_map_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/map_1.dam", "assets/maps/template/map_1.dam");
+			type.set ("assets/maps/template/map_1.dam", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/map_1.dam.bak", "assets/maps/template/map_1.dam.bak");
+			type.set ("assets/maps/template/map_1.dam.bak", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/template_map.dam", "assets/maps/template/template_map.dam");
+			type.set ("assets/maps/template/template_map.dam", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/template_map.dam.bak", "assets/maps/template/template_map.dam.bak");
+			type.set ("assets/maps/template/template_map.dam.bak", Reflect.field (AssetType, "text".toUpperCase ()));
 			
 			
 			initialized = true;

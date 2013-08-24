@@ -219,6 +219,57 @@ class ApplicationMain {
 		total ++;
 		
 		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/outDoor.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/platformer_player.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/template_tiles.png", loader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_1.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_1.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/template_map.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/template_map.dam.bak", urlLoader);
+		total ++;
+		
+		
 		var resourcePrefix = "NME_:bitmap_";
 		for (resourceName in Resource.listNames()) {
 			if (StringTools.startsWith (resourceName, resourcePrefix)) {

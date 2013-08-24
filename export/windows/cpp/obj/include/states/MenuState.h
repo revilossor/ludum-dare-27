@@ -8,7 +8,10 @@
 #include <org/flixel/FlxState.h>
 HX_DECLARE_CLASS2(org,flixel,FlxBasic)
 HX_DECLARE_CLASS2(org,flixel,FlxGroup)
+HX_DECLARE_CLASS2(org,flixel,FlxObject)
+HX_DECLARE_CLASS2(org,flixel,FlxSprite)
 HX_DECLARE_CLASS2(org,flixel,FlxState)
+HX_DECLARE_CLASS2(org,flixel,FlxText)
 HX_DECLARE_CLASS2(org,flixel,FlxTypedGroup)
 HX_DECLARE_CLASS1(states,MenuState)
 namespace states{
@@ -34,12 +37,19 @@ class HXCPP_CLASS_ATTRIBUTES  MenuState_obj : public ::org::flixel::FlxState_obj
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("MenuState"); }
 
+		virtual Void keyHandling( );
+		Dynamic keyHandling_dyn();
+
 		virtual Void update( );
 
 		virtual Void destroy( );
 
+		virtual Void addItems( );
+		Dynamic addItems_dyn();
+
 		virtual Void create( );
 
+		::org::flixel::FlxText _pressSpaceText;
 };
 
 } // end namespace states

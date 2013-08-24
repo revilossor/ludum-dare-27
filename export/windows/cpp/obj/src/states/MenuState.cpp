@@ -1,7 +1,7 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
+#ifndef INCLUDED_Util
+#include <Util.h>
 #endif
 #ifndef INCLUDED_org_flixel_FlxBasic
 #include <org/flixel/FlxBasic.h>
@@ -12,14 +12,41 @@
 #ifndef INCLUDED_org_flixel_FlxGroup
 #include <org/flixel/FlxGroup.h>
 #endif
+#ifndef INCLUDED_org_flixel_FlxObject
+#include <org/flixel/FlxObject.h>
+#endif
+#ifndef INCLUDED_org_flixel_FlxSprite
+#include <org/flixel/FlxSprite.h>
+#endif
 #ifndef INCLUDED_org_flixel_FlxState
 #include <org/flixel/FlxState.h>
+#endif
+#ifndef INCLUDED_org_flixel_FlxText
+#include <org/flixel/FlxText.h>
 #endif
 #ifndef INCLUDED_org_flixel_FlxTypedGroup
 #include <org/flixel/FlxTypedGroup.h>
 #endif
+#ifndef INCLUDED_org_flixel_system_input_FlxInputStates
+#include <org/flixel/system/input/FlxInputStates.h>
+#endif
+#ifndef INCLUDED_org_flixel_system_input_FlxKeyboard
+#include <org/flixel/system/input/FlxKeyboard.h>
+#endif
+#ifndef INCLUDED_org_flixel_system_input_FlxMouse
+#include <org/flixel/system/input/FlxMouse.h>
+#endif
+#ifndef INCLUDED_org_flixel_system_input_IFlxInput
+#include <org/flixel/system/input/IFlxInput.h>
+#endif
+#ifndef INCLUDED_org_flixel_util_FlxPoint
+#include <org/flixel/util/FlxPoint.h>
+#endif
 #ifndef INCLUDED_states_MenuState
 #include <states/MenuState.h>
+#endif
+#ifndef INCLUDED_states_PlatformerState
+#include <states/PlatformerState.h>
 #endif
 namespace states{
 
@@ -47,11 +74,29 @@ Dynamic MenuState_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
+Void MenuState_obj::keyHandling( ){
+{
+		HX_STACK_PUSH("MenuState::keyHandling","states/MenuState.hx",45);
+		HX_STACK_THIS(this);
+		HX_STACK_LINE(45)
+		if ((::org::flixel::FlxG_obj::keys->justReleased(HX_CSTRING("SPACE")))){
+			HX_STACK_LINE(46)
+			::org::flixel::FlxG_obj::switchState(::states::PlatformerState_obj::__new(null()));
+		}
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(MenuState_obj,keyHandling,(void))
+
 Void MenuState_obj::update( ){
 {
-		HX_STACK_PUSH("MenuState::update","states/MenuState.hx",31);
+		HX_STACK_PUSH("MenuState::update","states/MenuState.hx",40);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(31)
+		HX_STACK_LINE(41)
+		this->keyHandling();
+		HX_STACK_LINE(42)
 		this->super::update();
 	}
 return null();
@@ -60,24 +105,47 @@ return null();
 
 Void MenuState_obj::destroy( ){
 {
-		HX_STACK_PUSH("MenuState::destroy","states/MenuState.hx",26);
+		HX_STACK_PUSH("MenuState::destroy","states/MenuState.hx",35);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(26)
+		HX_STACK_LINE(36)
+		this->_pressSpaceText = null();
+		HX_STACK_LINE(37)
 		this->super::destroy();
 	}
 return null();
 }
 
 
+Void MenuState_obj::addItems( ){
+{
+		HX_STACK_PUSH("MenuState::addItems","states/MenuState.hx",31);
+		HX_STACK_THIS(this);
+		HX_STACK_LINE(31)
+		this->add(this->_pressSpaceText);
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(MenuState_obj,addItems,(void))
+
 Void MenuState_obj::create( ){
 {
-		HX_STACK_PUSH("MenuState::create","states/MenuState.hx",19);
+		HX_STACK_PUSH("MenuState::create","states/MenuState.hx",21);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(20)
-		::org::flixel::FlxG_obj::set_bgColor((int)-65281);
-		HX_STACK_LINE(21)
-		::haxe::Log_obj::trace(HX_CSTRING("init"),hx::SourceInfo(HX_CSTRING("MenuState.hx"),21,HX_CSTRING("states.MenuState"),HX_CSTRING("create")));
 		HX_STACK_LINE(22)
+		::org::flixel::FlxG_obj::set_bgColor((int)267386880);
+		HX_STACK_LINE(23)
+		::Util_obj::log(hx::ObjectPtr<OBJ_>(this),HX_CSTRING("init"));
+		HX_STACK_LINE(24)
+		::org::flixel::FlxG_obj::mouse->set_useSystemCursor(true);
+		HX_STACK_LINE(25)
+		this->_pressSpaceText = ::org::flixel::FlxText_obj::__new((int)0,(int)400,(int)800,HX_CSTRING("Press Space To Play"),(int)36,null(),null());
+		HX_STACK_LINE(26)
+		this->_pressSpaceText->setFormat(null(),(int)36,(int)-65281,HX_CSTRING("center"),null(),null());
+		HX_STACK_LINE(27)
+		this->addItems();
+		HX_STACK_LINE(28)
 		this->super::create();
 	}
 return null();
@@ -92,12 +160,14 @@ MenuState_obj::MenuState_obj()
 void MenuState_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MenuState);
+	HX_MARK_MEMBER_NAME(_pressSpaceText,"_pressSpaceText");
 	super::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
 void MenuState_obj::__Visit(HX_VISIT_PARAMS)
 {
+	HX_VISIT_MEMBER_NAME(_pressSpaceText,"_pressSpaceText");
 	super::__Visit(HX_VISIT_ARG);
 }
 
@@ -110,17 +180,31 @@ Dynamic MenuState_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"destroy") ) { return destroy_dyn(); }
+		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"addItems") ) { return addItems_dyn(); }
+		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"keyHandling") ) { return keyHandling_dyn(); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"_pressSpaceText") ) { return _pressSpaceText; }
 	}
 	return super::__Field(inName,inCallProp);
 }
 
 Dynamic MenuState_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool inCallProp)
 {
+	switch(inName.length) {
+	case 15:
+		if (HX_FIELD_EQ(inName,"_pressSpaceText") ) { _pressSpaceText=inValue.Cast< ::org::flixel::FlxText >(); return inValue; }
+	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
 
 void MenuState_obj::__GetFields(Array< ::String> &outFields)
 {
+	outFields->push(HX_CSTRING("_pressSpaceText"));
 	super::__GetFields(outFields);
 };
 
@@ -128,9 +212,12 @@ static ::String sStaticFields[] = {
 	String(null()) };
 
 static ::String sMemberFields[] = {
+	HX_CSTRING("keyHandling"),
 	HX_CSTRING("update"),
 	HX_CSTRING("destroy"),
+	HX_CSTRING("addItems"),
 	HX_CSTRING("create"),
+	HX_CSTRING("_pressSpaceText"),
 	String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {
