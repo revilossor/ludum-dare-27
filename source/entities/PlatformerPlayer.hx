@@ -20,6 +20,8 @@ class PlatformerPlayer extends FlxSprite
 		acceleration = new FlxPoint(0, 500);
 		drag = new FlxPoint(50, 50);
 		onFloor = false;
+	//	scale.x = scale.y = 1.2;
+		set_forceComplexRender(true);
 	}
 	override public function destroy():Void
 	{

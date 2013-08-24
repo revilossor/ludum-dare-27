@@ -1,5 +1,7 @@
 package ;
+import entities.BouncingEntity;
 import entities.Coin;
+import entities.KillingEntity;
 import flash.geom.Point;
 import openfl.Assets;
 import org.flixel.addons.FlxTilemapExt;
@@ -16,6 +18,7 @@ class Room extends FlxGroup
 {
 	private var _tiles(get, null):FlxTilemap;
 	private var allCoins(get, null):FlxGroup;
+	private var allBaddies(get, null):FlxGroup;
 	
 	private var index:UInt;
 	
@@ -38,24 +41,54 @@ class Room extends FlxGroup
 	{
 		Util.log(this, "adding tiles");
 		add(_tiles);
-		addEntities();
+		addCoins();
+		addBaddies();
 	}
-	private function addEntities():Void
+	private function addCoins():Void
 	{
 		allCoins = new FlxGroup();
 		var entitiesCsv:String = Assets.getText(Reg.entities[index]);
-		var entityData = entitiesCsv.split(",");	
+		var r:EReg = ~/([0-9][\r\n\t])/g;
+		var withCommas:String = r.replace(entitiesCsv, "$1,");
+		var entityData = withCommas.split(",");
+	//	trace(entityData);
 		var xIndex:UInt = 0;
 		var yIndex:UInt = 0;
 		for (n in 0...entityData.length) {
-			if (xIndex == 0 && n > _tiles.widthInTiles) { yIndex++; }	
+			if (xIndex+1 == _tiles.widthInTiles) { yIndex++; }	
 			xIndex = n % _tiles.widthInTiles;
+	//		trace("x : " + xIndex + " y : " + yIndex);
 			var thisDrawPoint:Point = new Point(xIndex * 32, yIndex * 32);
 			if (entityData[n] == "1") {	// add coin
 				allCoins.add(new Coin(thisDrawPoint.x+8, thisDrawPoint.y+8));
 			}
 		}
 		add(allCoins);
+	}
+	private function addBaddies():Void
+	{
+		allBaddies = new FlxGroup();
+		var entitiesCsv:String = Assets.getText(Reg.baddies[index]);
+		var r:EReg = ~/([0-9][\r\n\t])/g;
+		var withCommas:String = r.replace(entitiesCsv, "$1,");
+		
+		
+		var entityData = withCommas.split(",");	
+		var xIndex:UInt = 0;
+		var yIndex:UInt = 0;
+		for (n in 0...entityData.length) {
+			if (xIndex == _tiles.widthInTiles-1){ yIndex++; }	
+			xIndex = n % _tiles.widthInTiles;
+			var thisDrawPoint:Point = new Point(xIndex * 32, yIndex * 32);
+			if (entityData[n] == "1") {	// add killer
+				allBaddies.add(new KillingEntity(thisDrawPoint.x, thisDrawPoint.y));
+			}else if (entityData[n] == "2") {	// add bouncer
+				allBaddies.add(new BouncingEntity(thisDrawPoint.x, thisDrawPoint.y));
+			}else if (entityData[n] == "3") {	// add stunner
+				allBaddies.add(new StunningEntity(thisDrawPoint.x, thisDrawPoint.y));
+			}
+		}
+		add(allBaddies);
 	}
 	override public function destroy():Void
 	{
@@ -75,10 +108,10 @@ class Room extends FlxGroup
 	{
 		return allCoins;
 	}
-//	public function set_allCoins(n:FlxGroup):Void
-//	{
-//		allCoins = n;
-//	}
+	public function get_allBaddies():FlxGroup
+	{
+		return allBaddies;
+	}
 	public function get_width():Float
 	{
 		return width;

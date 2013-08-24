@@ -120,37 +120,51 @@ ApplicationMain.main = function() {
 	ApplicationMain.loaders.set("assets/data/vis/bounds.png",loader31);
 	ApplicationMain.total++;
 	var loader32 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader32);
+	ApplicationMain.loaders.set("assets/gfx/coin.png",loader32);
 	ApplicationMain.total++;
 	var loader33 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader33);
+	ApplicationMain.loaders.set("assets/gfx/coin_tiles.png",loader33);
 	ApplicationMain.total++;
 	var loader34 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader34);
+	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader34);
+	ApplicationMain.total++;
+	var loader35 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader35);
+	ApplicationMain.total++;
+	var loader36 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader36);
 	ApplicationMain.total++;
 	var urlLoader = new flash.net.URLLoader();
 	urlLoader.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv",urlLoader);
 	ApplicationMain.total++;
 	var urlLoader1 = new flash.net.URLLoader();
 	urlLoader1.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader1);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader1);
 	ApplicationMain.total++;
 	var urlLoader2 = new flash.net.URLLoader();
 	urlLoader2.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader2);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv",urlLoader2);
 	ApplicationMain.total++;
 	var urlLoader3 = new flash.net.URLLoader();
 	urlLoader3.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader3);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader3);
 	ApplicationMain.total++;
 	var urlLoader4 = new flash.net.URLLoader();
 	urlLoader4.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader4);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader4);
 	ApplicationMain.total++;
 	var urlLoader5 = new flash.net.URLLoader();
 	urlLoader5.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader5);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader5);
+	ApplicationMain.total++;
+	var urlLoader6 = new flash.net.URLLoader();
+	urlLoader6.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader6);
+	ApplicationMain.total++;
+	var urlLoader7 = new flash.net.URLLoader();
+	urlLoader7.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader7);
 	ApplicationMain.total++;
 	var resourcePrefix = "NME_:bitmap_";
 	var _g = 0, _g1 = haxe.Resource.listNames();
@@ -169,16 +183,16 @@ ApplicationMain.main = function() {
 		var $it0 = ApplicationMain.loaders.keys();
 		while( $it0.hasNext() ) {
 			var path = $it0.next();
-			var loader35 = ApplicationMain.loaders.get(path);
-			loader35.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
-			loader35.load(new flash.net.URLRequest(path));
+			var loader37 = ApplicationMain.loaders.get(path);
+			loader37.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
+			loader37.load(new flash.net.URLRequest(path));
 		}
 		var $it1 = ApplicationMain.urlLoaders.keys();
 		while( $it1.hasNext() ) {
 			var path = $it1.next();
-			var urlLoader6 = ApplicationMain.urlLoaders.get(path);
-			urlLoader6.addEventListener("complete",ApplicationMain.loader_onComplete);
-			urlLoader6.load(new flash.net.URLRequest(path));
+			var urlLoader8 = ApplicationMain.urlLoaders.get(path);
+			urlLoader8.addEventListener("complete",ApplicationMain.loader_onComplete);
+			urlLoader8.load(new flash.net.URLRequest(path));
 		}
 	}
 }
@@ -2555,6 +2569,9 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	,get_width: function() {
 		return this.width;
 	}
+	,get_allCoins: function() {
+		return this.allCoins;
+	}
 	,get__tiles: function() {
 		return this._tiles;
 	}
@@ -2564,12 +2581,29 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	,destroy: function() {
 		org.flixel.FlxGroup.prototype.destroy.call(this);
 	}
+	,addEntities: function() {
+		this.allCoins = new org.flixel.FlxGroup();
+		var entitiesCsv = openfl.Assets.getText(Reg.entities[this.index]);
+		var entityData = entitiesCsv.split(",");
+		var xIndex = 0;
+		var yIndex = 0;
+		var _g1 = 0, _g = entityData.length;
+		while(_g1 < _g) {
+			var n = _g1++;
+			if(xIndex == 0 && n > this.get__tiles().widthInTiles) yIndex++;
+			xIndex = n % this.get__tiles().widthInTiles;
+			var thisDrawPoint = new flash.geom.Point(xIndex * 32,yIndex * 32);
+			if(entityData[n] == "1") this.get_allCoins().add(new entities.Coin(thisDrawPoint.x + 8,thisDrawPoint.y + 8));
+		}
+		this.add(this.get_allCoins());
+	}
 	,addItems: function() {
 		Util.log(this,"adding tiles");
 		this.add(this.get__tiles());
+		this.addEntities();
 	}
 	,__class__: Room
-	,__properties__: $extend(org.flixel.FlxGroup.prototype.__properties__,{get__tiles:"get__tiles",get_width:"get_width",get_height:"get_height"})
+	,__properties__: $extend(org.flixel.FlxGroup.prototype.__properties__,{get__tiles:"get__tiles",get_allCoins:"get_allCoins",get_width:"get_width",get_height:"get_height"})
 });
 var Std = function() { }
 $hxClasses["Std"] = Std;
@@ -4312,6 +4346,19 @@ org.flixel.FlxSprite.prototype = $extend(org.flixel.FlxObject.prototype,{
 	,__properties__: $extend(org.flixel.FlxObject.prototype.__properties__,{set_facing:"set_facing",set_color:"set_color",get_color:"get_color",set_frame:"set_frame",get_frame:"get_frame",get_flipped:"get_flipped",set_curAnim:"set_curAnim",get_curAnim:"get_curAnim",set_pixels:"set_pixels",get_pixels:"get_pixels",set_alpha:"set_alpha",set_frameName:"set_frameName",get_frameName:"get_frameName",set_antialiasing:"set_antialiasing",get_simpleRender:"get_simpleRender",set_blend:"set_blend",get_blend:"get_blend"})
 });
 var entities = {}
+entities.Coin = function(xp,yp) {
+	org.flixel.FlxSprite.call(this,xp,yp);
+	this.loadGraphic(Resourses.coin,false,false,16,16);
+};
+$hxClasses["entities.Coin"] = entities.Coin;
+entities.Coin.__name__ = ["entities","Coin"];
+entities.Coin.__super__ = org.flixel.FlxSprite;
+entities.Coin.prototype = $extend(org.flixel.FlxSprite.prototype,{
+	update: function() {
+		org.flixel.FlxSprite.prototype.update.call(this);
+	}
+	,__class__: entities.Coin
+});
 entities.PlatformerPlayer = function(xp,yp) {
 	org.flixel.FlxSprite.call(this,xp,yp);
 	this.loadGraphic(Resourses.player_sprite,false,false,16,30);
@@ -11882,6 +11929,12 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/data/vis/bounds.png","assets/data/vis/bounds.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/data/vis/bounds.png",value);
+		nme.AssetData.path.set("assets/gfx/coin.png","assets/gfx/coin.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/coin.png",value);
+		nme.AssetData.path.set("assets/gfx/coin_tiles.png","assets/gfx/coin_tiles.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/coin_tiles.png",value);
 		nme.AssetData.path.set("assets/gfx/outDoor.png","assets/gfx/outDoor.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/outDoor.png",value);
@@ -11891,9 +11944,15 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/gfx/template_tiles.png","assets/gfx/template_tiles.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/template_tiles.png",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_entities.csv","assets/maps/template/mapCSV_map_1_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_entities.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_tiles.csv","assets/maps/template/mapCSV_map_1_tiles.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_entities.csv","assets/maps/template/mapCSV_template_map_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_entities.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_tiles.csv","assets/maps/template/mapCSV_template_map_tiles.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_tiles.csv",value);
@@ -20904,7 +20963,10 @@ states.GameOverState.__name__ = ["states","GameOverState"];
 states.GameOverState.__super__ = org.flixel.FlxState;
 states.GameOverState.prototype = $extend(org.flixel.FlxState.prototype,{
 	keyHandling: function() {
-		if(org.flixel.FlxG.keys.justPressed("SPACE")) org.flixel.FlxG.switchState(new states.PlatformerState(Reg.roomIndex));
+		if(org.flixel.FlxG.keys.justPressed("SPACE")) {
+			Util.log(this,"retry");
+			org.flixel.FlxG.switchState(new states.PlatformerState(Reg.roomIndex));
+		}
 	}
 	,update: function() {
 		org.flixel.FlxState.prototype.update.call(this);
@@ -20949,6 +21011,7 @@ states.MenuState.prototype = $extend(org.flixel.FlxState.prototype,{
 		org.flixel.FlxG.set_bgColor(267386880);
 		Util.log(this,"init");
 		org.flixel.FlxG.mouse.set_useSystemCursor(true);
+		Reg.roomIndex = 0;
 		this._pressSpaceText = new org.flixel.FlxText(0,400,800,"Press Space To Play",36);
 		this._pressSpaceText.setFormat(null,36,-65281,"center");
 		this.addItems();
@@ -20965,11 +21028,14 @@ $hxClasses["states.PlatformerState"] = states.PlatformerState;
 states.PlatformerState.__name__ = ["states","PlatformerState"];
 states.PlatformerState.__super__ = org.flixel.FlxState;
 states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
-	playerOverDoor: function(pl,door) {
+	playerOverCoin: function(pl,co) {
+		co.exists = false;
+		this.timeRemaining += 30;
+	}
+	,playerOverDoor: function(pl,door) {
 		if(org.flixel.FlxG.keys.justPressed("DOWN")) {
 			Util.log(this,"player over door");
 			Reg.roomIndex++;
-			console.log("index " + Reg.roomIndex + " num levels " + Reg.levels.length);
 			if(Reg.roomIndex > Reg.levels.length) {
 				Util.log(this,"WIN!");
 				org.flixel.FlxG.switchState(new states.WinState());
@@ -20981,6 +21047,8 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		org.flixel.FlxG.overlap(this._player,roomTiles,null,org.flixel.FlxObject.separate);
 		if((this._player.touching & 4096) > 0) this._player.onFloor = true; else this._player.onFloor = false;
 		org.flixel.FlxG.overlap(this._player,this.door,$bind(this,this.playerOverDoor),null);
+		var coins = this._room.get_allCoins();
+		org.flixel.FlxG.overlap(this._player,coins,$bind(this,this.playerOverCoin),null);
 	}
 	,keyHandling: function() {
 		if(org.flixel.FlxG.keys.justReleased("Q")) {
@@ -21107,13 +21175,16 @@ flash.display.DisplayObject.BOUNDS_INVALID = 64;
 flash.display.DisplayObject.RENDER_VALIDATE_IN_PROGRESS = 1024;
 flash.display.DisplayObject.ALL_RENDER_FLAGS = 98;
 Resourses.template_tiles = "assets/gfx/template_tiles.png";
-Resourses.map_1 = "assets/maps/template/mapCSV_map_1_tiles.csv";
 Resourses.template_entities = "assets/maps/template/mapCSV_template_map_entities.csv";
+Resourses.map_1 = "assets/maps/template/mapCSV_map_1_tiles.csv";
+Resourses.map_1_entities = "assets/maps/template/mapCSV_map_1_entities.csv";
 Resourses.template_room = "assets/maps/template/mapCSV_template_map_tiles.csv";
 Resourses.template_doors = "assets/maps/template/mapCSV_template_map_doors.csv";
 Resourses.player_sprite = "assets/gfx/platformer_player.png";
 Resourses.door = "assets/gfx/outDoor.png";
+Resourses.coin = "assets/gfx/coin.png";
 Reg.levels = [Resourses.template_room,Resourses.map_1];
+Reg.entities = [Resourses.template_entities,Resourses.map_1_entities];
 Reg.level = 0;
 Reg.scores = [];
 Reg.score = 0;

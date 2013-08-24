@@ -15,9 +15,14 @@ class Reg
 	 * Example usage: Storing the levels of a platformer.
 	 */
 	static public var levels:Array<Dynamic> = [	Resourses.template_room, 
-												Resourses.map_1				];
+												Resourses.map_1,
+												Resourses.map_2_tiles	];
 	static public var entities:Array<Dynamic> = [	Resourses.template_entities,
-													Resourses.map_1_entities		];
+													Resourses.map_1_entities,
+													Resourses.map_2_coins	];
+	static public var baddies:Array<Dynamic> = [	Resourses.template_baddies,
+													Resourses.map_1_baddies,
+													Resourses.map_2_baddies	];
 	/**
 	 * Generic level variable that can be used for cross-state stuff.
 	 * Example usage: Storing the current level number.
@@ -46,10 +51,12 @@ class Reg
 	static public var save:FlxSave;
 	
 	static public var startPositions:Array<Point> = [	new Point(193, 609),		
-														new Point(99,257)		];
+														new Point(99, 257), 
+														new Point(97,224)	];
 	
 	static public var doorPositions:Array<Point> = [	new Point(1280, 672),
-														new Point(801,257)		];
+														new Point(801, 257),
+														new Point(544,544)	];
 	static public var roomIndex:Int = 0;
 	
 }

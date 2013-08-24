@@ -13,9 +13,13 @@ class Resourses
 	// map tiles
 	public static var template_tiles:String = "assets/gfx/template_tiles.png";
 	public static var template_entities:String = "assets/maps/template/mapCSV_template_map_entities.csv";
+	public static var template_baddies:String = "assets/maps/template/mapCSV_template_map_baddies.csv";
 	public static var map_1:String = "assets/maps/template/mapCSV_map_1_tiles.csv";
 	public static var map_1_entities:String = "assets/maps/template/mapCSV_map_1_entities.csv";
-	
+	public static var map_1_baddies:String = "assets/maps/template/mapCSV_map_1_baddies.csv";
+	public static var map_2_tiles:String = "assets/maps/template/mapCSV_map_2_tiles.csv";
+	public static var map_2_coins:String = "assets/maps/template/mapCSV_map_2_entities.csv";
+	public static var map_2_baddies:String = "assets/maps/template/mapCSV_map_2_baddies.csv";
 	
 //	public static var template_entities:String = "assets/maps/template/mapCSV_template_map_entities.csv";
 	

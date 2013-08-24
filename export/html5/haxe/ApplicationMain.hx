@@ -220,6 +220,16 @@ class ApplicationMain {
 		
 		
 		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/coin.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/coin_tiles.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
 		loaders.set("assets/gfx/outDoor.png", loader);
 		total ++;
 		
@@ -236,7 +246,19 @@ class ApplicationMain {
 		
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv", urlLoader);
 		total ++;
 		
 		

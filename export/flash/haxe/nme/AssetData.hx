@@ -90,6 +90,10 @@ class AssetData {
 			type.set ("assets/data/vcr/stop.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/data/vis/bounds.png", nme.NME_assets_data_vis_bounds_png);
 			type.set ("assets/data/vis/bounds.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/gfx/coin.png", nme.NME_assets_gfx_coin_png);
+			type.set ("assets/gfx/coin.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			className.set ("assets/gfx/coin_tiles.png", nme.NME_assets_gfx_coin_tiles_png);
+			type.set ("assets/gfx/coin_tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/gfx/outDoor.png", nme.NME_assets_gfx_outdoor_png);
 			type.set ("assets/gfx/outDoor.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/gfx/platformer_player.png", nme.NME_assets_gfx_platformer_player_png);
@@ -98,8 +102,12 @@ class AssetData {
 			type.set ("assets/gfx/template_tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			className.set ("assets/HaxeFlixel.svg", nme.NME_assets_haxeflixel_svg);
 			type.set ("assets/HaxeFlixel.svg", Reflect.field (AssetType, "text".toUpperCase ()));
+			className.set ("assets/maps/template/mapCSV_map_1_entities.csv", nme.NME_assets_maps_template_mapcsv_map_1_entities_csv);
+			type.set ("assets/maps/template/mapCSV_map_1_entities.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/maps/template/mapCSV_map_1_tiles.csv", nme.NME_assets_maps_template_mapcsv_map_1_tiles_csv);
 			type.set ("assets/maps/template/mapCSV_map_1_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			className.set ("assets/maps/template/mapCSV_template_map_entities.csv", nme.NME_assets_maps_template_mapcsv_template_map_entities_csv);
+			type.set ("assets/maps/template/mapCSV_template_map_entities.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/maps/template/mapCSV_template_map_tiles.csv", nme.NME_assets_maps_template_mapcsv_template_map_tiles_csv);
 			type.set ("assets/maps/template/mapCSV_template_map_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			className.set ("assets/maps/template/map_1.dam", nme.NME_assets_maps_template_map_1_dam);
@@ -158,11 +166,15 @@ class NME_assets_data_vcr_restart_png extends flash.display.BitmapData { public 
 class NME_assets_data_vcr_step_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vcr_stop_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_data_vis_bounds_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_gfx_coin_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class NME_assets_gfx_coin_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_gfx_outdoor_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_gfx_platformer_player_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_gfx_template_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class NME_assets_haxeflixel_svg extends flash.utils.ByteArray { }
+class NME_assets_maps_template_mapcsv_map_1_entities_csv extends flash.utils.ByteArray { }
 class NME_assets_maps_template_mapcsv_map_1_tiles_csv extends flash.utils.ByteArray { }
+class NME_assets_maps_template_mapcsv_template_map_entities_csv extends flash.utils.ByteArray { }
 class NME_assets_maps_template_mapcsv_template_map_tiles_csv extends flash.utils.ByteArray { }
 class NME_assets_maps_template_map_1_dam extends flash.utils.ByteArray { }
 class NME_assets_maps_template_map_1_dam_bak extends flash.utils.ByteArray { }

@@ -1,4 +1,5 @@
 package states;
+import entities.Entity;
 import flash.geom.Point;
 import flash.utils.Timer;
 import openfl.Assets;
@@ -79,7 +80,7 @@ class PlatformerState extends FlxState
 		super.update();
 		doCollision();
 		timeRemaining--;
-		timeDisplay.text = "time remaining : " + timeRemaining;
+		timeDisplay.text = "time remaining : " + (Math.ceil(timeRemaining/30));
 		keyHandling();
 		if (timeRemaining <= 0) {
 			FlxG.switchState(new GameOverState());
@@ -100,13 +101,18 @@ class PlatformerState extends FlxState
 		FlxG.overlap(_player, door, playerOverDoor);
 		var coins:FlxGroup = _room.get_allCoins();
 		FlxG.overlap(_player, coins, playerOverCoin);
+		var baddies:FlxGroup = _room.get_allBaddies();
+		FlxG.collide(_player, baddies, playerHitBaddie);
 	}
-	private function playerOverDoor(pl:FlxBasic, door:FlxBasic):Void
+	private function playerOverDoor(pl:FlxBasic, door:FlxSprite):Void
 	{
 		if (FlxG.keys.justPressed("DOWN")) {
+			door.allowCollisions = FlxObject.NONE;
 			Util.log(this, "player over door");
 			Reg.roomIndex++;
-			if (Reg.roomIndex > Reg.levels.length) {
+			trace("roomIndex " + Reg.roomIndex);
+			trace("levels length " + Reg.levels.length);
+			if (Reg.roomIndex == Reg.levels.length) {
 				Util.log(this, "WIN!");
 				FlxG.switchState(new WinState());
 			}else{
@@ -118,5 +124,15 @@ class PlatformerState extends FlxState
 	{
 		co.exists = false;
 		timeRemaining += 30;
+	}
+	private function playerHitBaddie(pl:FlxBasic, bd:Entity):Void
+	{
+		switch(bd.type) {
+			case "KillingEntity":	Util.log(this, "hit killer");
+			
+			case "BouncingEntity":	Util.log(this, "hit bouncer");
+				
+			case "StunningEntity":	Util.log(this, "hit stunner");
+		}
 	}
 }
