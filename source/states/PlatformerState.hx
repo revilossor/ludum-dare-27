@@ -103,6 +103,7 @@ class PlatformerState extends FlxState
 		FlxG.overlap(_player, coins, playerOverCoin);
 		var baddies:FlxGroup = _room.get_allBaddies();
 		FlxG.collide(_player, baddies, playerHitBaddie);
+		FlxG.collide(baddies, roomTiles, baddieHitWall);
 	}
 	private function playerOverDoor(pl:FlxBasic, door:FlxSprite):Void
 	{
@@ -127,12 +128,21 @@ class PlatformerState extends FlxState
 	}
 	private function playerHitBaddie(pl:FlxBasic, bd:Entity):Void
 	{
+		FlxG.switchState(new GameOverState("You Died!"));
+	}
+	private function baddieHitWall(bd:Entity, w:FlxBasic):Void
+	{
 		switch(bd.type) {
-			case "KillingEntity":	Util.log(this, "hit killer");
-			
-			case "BouncingEntity":	Util.log(this, "hit bouncer");
-				
-			case "StunningEntity":	Util.log(this, "hit stunner");
+			case "StunningEntity":	 
+				//Util.log(this, "flipper hit wall");
+				var s:StunningEntity = cast(bd);
+				if (s.isGoingUp) {
+					s.isGoingUp = false;
+					s.velocity = s.addEq(s.velocity,s.upVect);
+				}else {
+					s.isGoingUp = true;
+					s.velocity = s.addEq(s.velocity,s.downVect);
+				}
 		}
 	}
 }

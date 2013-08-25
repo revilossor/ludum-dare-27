@@ -1,10 +1,13 @@
 package ;
 import entities.BouncingEntity;
 import entities.Coin;
+import entities.HorizontalFlipper;
 import entities.KillingEntity;
+import entities.VerticalFlipper;
 import flash.geom.Point;
 import openfl.Assets;
 import org.flixel.addons.FlxTilemapExt;
+import org.flixel.FlxG;
 import org.flixel.FlxGroup;
 import org.flixel.FlxSprite;
 import org.flixel.FlxTilemap;
@@ -55,7 +58,7 @@ class Room extends FlxGroup
 		var xIndex:UInt = 0;
 		var yIndex:UInt = 0;
 		for (n in 0...entityData.length) {
-			if (xIndex+1 == _tiles.widthInTiles) { yIndex++; }	
+			if (xIndex+1 == cast(_tiles.widthInTiles)) { yIndex++; }	
 			xIndex = n % _tiles.widthInTiles;
 	//		trace("x : " + xIndex + " y : " + yIndex);
 			var thisDrawPoint:Point = new Point(xIndex * 32, yIndex * 32);
@@ -77,15 +80,17 @@ class Room extends FlxGroup
 		var xIndex:UInt = 0;
 		var yIndex:UInt = 0;
 		for (n in 0...entityData.length) {
-			if (xIndex == _tiles.widthInTiles-1){ yIndex++; }	
+			if (xIndex == cast(_tiles.widthInTiles-1)){ yIndex++; }	
 			xIndex = n % _tiles.widthInTiles;
 			var thisDrawPoint:Point = new Point(xIndex * 32, yIndex * 32);
 			if (entityData[n] == "1") {	// add killer
 				allBaddies.add(new KillingEntity(thisDrawPoint.x, thisDrawPoint.y));
 			}else if (entityData[n] == "2") {	// add bouncer
 				allBaddies.add(new BouncingEntity(thisDrawPoint.x, thisDrawPoint.y));
-			}else if (entityData[n] == "3") {	// add stunner
-				allBaddies.add(new StunningEntity(thisDrawPoint.x, thisDrawPoint.y));
+			}else if (entityData[n] == "3") {	// add hmover
+				allBaddies.add(new HorizontalFlipper(thisDrawPoint.x, thisDrawPoint.y));
+			}else if (entityData[n] == "4") {	// add vmover
+				allBaddies.add(new VerticalFlipper(thisDrawPoint.x, thisDrawPoint.y));
 			}
 		}
 		add(allBaddies);

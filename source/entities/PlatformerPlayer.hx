@@ -12,6 +12,9 @@ class PlatformerPlayer extends FlxSprite
 {
 	public var onFloor:Bool;
 	
+	private var jumpTimer:Int;
+	private var isJumping:Bool;
+	
 	override public function new(xp:UInt, yp:UInt):Void
 	{
 		super(xp, yp);
@@ -22,6 +25,7 @@ class PlatformerPlayer extends FlxSprite
 		onFloor = false;
 	//	scale.x = scale.y = 1.2;
 		set_forceComplexRender(true);
+		jumpTimer = 10;
 	}
 	override public function destroy():Void
 	{
@@ -31,6 +35,7 @@ class PlatformerPlayer extends FlxSprite
 	{
 		super.update();
 		keyHandling();
+		Reg.playerPosition = getMidpoint();
 	}
 	private function keyHandling():Void
 	{
@@ -41,11 +46,22 @@ class PlatformerPlayer extends FlxSprite
 			velocity.x += 10;
 		}
 		if (onFloor) {
+			jumpTimer = 10;
 			if (FlxG.keys.justPressed("UP")) {
-				Util.log(this, "jump");
+				Util.log(this, "start jump");
 				y -= 3;
-				velocity.y = -maxVelocity.y/2;
+				jumpTimer--;
+				velocity.y = -maxVelocity.y/10;
 			}
+		}
+		if (FlxG.keys.pressed("UP") && jumpTimer > 0) {
+			velocity.y -= maxVelocity.y / 20;
+			jumpTimer--;
+		}
+		if (FlxG.keys.justReleased("UP") || jumpTimer <= 0) {
+			Util.log(this, "end jump");
+			isJumping = false;
+			
 		}
 		if (FlxG.keys.pressed("DOWN")) {
 			// ???

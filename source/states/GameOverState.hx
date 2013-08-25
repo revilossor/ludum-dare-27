@@ -13,15 +13,17 @@ class GameOverState extends FlxState
 {
 	private var goverText:FlxText;
 	private var spaceText:FlxText;
+	private var message:String;
 	
-	public function new() 
+	public function new(msg:String = "You Ran Out Of Time!") 
 	{
 		super();
+		message = msg;
 	}
 	override public function create():Void 
 	{
 		super.create();
-		goverText = new FlxText(0, 100, 800, "You Ran Out Of Time!");
+		goverText = new FlxText(0, 100, 800, message);
 		goverText.setFormat(null, 36, 0xffffff00, "center");
 		spaceText = new FlxText(0, 450, 800, "press space to retry!");
 		spaceText.setFormat(null, 24, 0xffffff00, "center");

@@ -2,6 +2,7 @@ package;
 
 import flash.geom.Point;
 import org.flixel.FlxSave;
+import org.flixel.util.FlxPoint;
 
 /**
 * Handy, pre-built Registry class that can be used to store 
@@ -58,5 +59,5 @@ class Reg
 														new Point(801, 257),
 														new Point(544,544)	];
 	static public var roomIndex:Int = 0;
-	
+	static public var playerPosition:FlxPoint = new FlxPoint();
 }
