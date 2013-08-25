@@ -3,6 +3,7 @@ import entities.BouncingEntity;
 import entities.Coin;
 import entities.HorizontalFlipper;
 import entities.KillingEntity;
+import entities.Spikes;
 import entities.VerticalFlipper;
 import flash.geom.Point;
 import openfl.Assets;
@@ -20,6 +21,7 @@ import org.flixel.util.FlxPoint;
 class Room extends FlxGroup
 {
 	private var _tiles(get, null):FlxTilemap;
+	private var _bg:FlxTilemap;
 	private var allCoins(get, null):FlxGroup;
 	private var allBaddies(get, null):FlxGroup;
 	
@@ -34,6 +36,9 @@ class Room extends FlxGroup
 		index = i;
 		_tiles = new FlxTilemap();
 		_tiles.loadMap(Assets.getText(Reg.levels[index]), Resourses.template_tiles, 32, 32);
+		_bg = new FlxTilemap();
+		_bg.loadMap(Assets.getText(Reg.bgs[index]), Resourses.bg_tiles, 32, 32);
+		
 		addItems();
 		width = _tiles.width;
 		height = _tiles.height;
@@ -43,6 +48,7 @@ class Room extends FlxGroup
 	private function addItems():Void
 	{
 		Util.log(this, "adding tiles");
+		add(_bg);
 		add(_tiles);
 		addCoins();
 		addBaddies();
@@ -75,7 +81,6 @@ class Room extends FlxGroup
 		var r:EReg = ~/([0-9][\r\n\t])/g;
 		var withCommas:String = r.replace(entitiesCsv, "$1,");
 		
-		
 		var entityData = withCommas.split(",");	
 		var xIndex:UInt = 0;
 		var yIndex:UInt = 0;
@@ -91,6 +96,8 @@ class Room extends FlxGroup
 				allBaddies.add(new HorizontalFlipper(thisDrawPoint.x, thisDrawPoint.y));
 			}else if (entityData[n] == "4") {	// add vmover
 				allBaddies.add(new VerticalFlipper(thisDrawPoint.x, thisDrawPoint.y));
+			}else if (entityData[n] == "5") {	// add spikes
+				allBaddies.add(new Spikes(thisDrawPoint.x, thisDrawPoint.y + 20));
 			}
 		}
 		add(allBaddies);

@@ -1,5 +1,6 @@
 package states;
 import entities.Entity;
+import entities.TimePlusPlus;
 import flash.geom.Point;
 import flash.utils.Timer;
 import openfl.Assets;
@@ -28,6 +29,8 @@ class PlatformerState extends FlxState
 	private var  door:FlxSprite;
 	private var _player:PlatformerPlayer;
 	
+	private var timeplusses:FlxGroup;
+	
 	private var timeRemaining:Int;
 	private var timeDisplay:FlxText;
 	
@@ -42,6 +45,7 @@ class PlatformerState extends FlxState
 		super.create();
 		FlxG.bgColor = 0xff000000;
 		
+		timeplusses = new FlxGroup();
 		_room = new Room(index);
 		
 		var playerStart:Point = Reg.startPositions[index];
@@ -65,6 +69,7 @@ class PlatformerState extends FlxState
 		door = new FlxSprite(thisDoorPosition.x, thisDoorPosition.y, Resourses.door);
 		door.scrollFactor = new FlxPoint(1,1);
 		add(door);
+		add(timeplusses);
 		add(_player);
 		timeDisplay = new FlxText(0, 0, 800, "init", 36);
 		timeDisplay.setFormat(null, 36, 0xffffff00, "left");
@@ -89,8 +94,13 @@ class PlatformerState extends FlxState
 	private function keyHandling():Void
 	{
 		if (FlxG.keys.justReleased("Q")) {
-			Reg.roomIndex = index;
-			FlxG.switchState(new WinState());
+			Reg.roomIndex++;
+			if (Reg.roomIndex == Reg.levels.length) {
+				Util.log(this, "WIN!");
+				FlxG.switchState(new WinState());
+			}else{
+				FlxG.switchState(new PlatformerState(Reg.roomIndex));
+			}
 		}
 	}
 	private function doCollision():Void
@@ -104,6 +114,7 @@ class PlatformerState extends FlxState
 		var baddies:FlxGroup = _room.get_allBaddies();
 		FlxG.collide(_player, baddies, playerHitBaddie);
 		FlxG.collide(baddies, roomTiles, baddieHitWall);
+		FlxG.collide(baddies, baddies, baddieHitWall);
 	}
 	private function playerOverDoor(pl:FlxBasic, door:FlxSprite):Void
 	{
@@ -121,14 +132,21 @@ class PlatformerState extends FlxState
 			}
 		}
 	}
-	private function playerOverCoin(pl:FlxBasic, co:FlxBasic):Void
+	private function playerOverCoin(pl:FlxBasic, co:FlxSprite):Void
 	{
 		co.exists = false;
 		timeRemaining += 30;
+		timeplusses.add(new TimePlusPlus(co.x - 15, co.y - 16));
 	}
 	private function playerHitBaddie(pl:FlxBasic, bd:Entity):Void
 	{
-		FlxG.switchState(new GameOverState("You Died!"));
+		if (bd.type == "spike") {
+			if (_player.y < (bd.y - 29)) {
+				FlxG.switchState(new GameOverState("You Were Spiked By A Spike!"));
+			}
+		}else{
+			FlxG.switchState(new GameOverState("You Died!"));
+		}
 	}
 	private function baddieHitWall(bd:Entity, w:FlxBasic):Void
 	{

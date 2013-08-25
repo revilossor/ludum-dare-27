@@ -8,6 +8,7 @@
 HX_DECLARE_CLASS0(Reg)
 HX_DECLARE_CLASS2(flash,geom,Point)
 HX_DECLARE_CLASS2(org,flixel,FlxSave)
+HX_DECLARE_CLASS3(org,flixel,util,FlxPoint)
 
 
 class HXCPP_CLASS_ATTRIBUTES  Reg_obj : public hx::Object{
@@ -31,6 +32,9 @@ class HXCPP_CLASS_ATTRIBUTES  Reg_obj : public hx::Object{
 		::String __ToString() const { return HX_CSTRING("Reg"); }
 
 		static Dynamic levels;
+		static Dynamic bgs;
+		static Dynamic entities;
+		static Dynamic baddies;
 		static int level;
 		static Dynamic scores;
 		static int score;
@@ -39,6 +43,7 @@ class HXCPP_CLASS_ATTRIBUTES  Reg_obj : public hx::Object{
 		static Array< ::Dynamic > startPositions;
 		static Array< ::Dynamic > doorPositions;
 		static int roomIndex;
+		static ::org::flixel::util::FlxPoint playerPosition;
 };
 
 

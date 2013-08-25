@@ -192,11 +192,14 @@
 #include <flash/display/Bitmap.h>
 #include <flash/_Vector/Vector_Impl_.h>
 #include <flash/Memory.h>
+#include <entities/VerticalFlipper.h>
+#include <entities/TimePlusPlus.h>
+#include <entities/Spikes.h>
 #include <entities/PlatformerPlayer.h>
-#include <org/flixel/FlxSprite.h>
-#include <org/flixel/FlxObject.h>
-#include <org/flixel/util/FlxPoint.h>
-#include <org/flixel/util/FlxRect.h>
+#include <entities/KillingEntity.h>
+#include <entities/HorizontalFlipper.h>
+#include <entities/Coin.h>
+#include <entities/BouncingEntity.h>
 #include <cpp/zip/Uncompress.h>
 #include <cpp/zip/Flush.h>
 #include <cpp/zip/Compress.h>
@@ -207,6 +210,11 @@
 #include <Util.h>
 #include <Type.h>
 #include <ValueType.h>
+#include <StunningEntity.h>
+#include <entities/Entity.h>
+#include <org/flixel/FlxSprite.h>
+#include <org/flixel/FlxObject.h>
+#include <org/flixel/util/FlxRect.h>
 #include <StringTools.h>
 #include <StringBuf.h>
 #include <Room.h>
@@ -214,14 +222,16 @@
 #include <org/flixel/FlxTypedGroup.h>
 #include <org/flixel/FlxBasic.h>
 #include <Reg.h>
-#include <Resourses.h>
+#include <org/flixel/util/FlxPoint.h>
 #include <flash/geom/Point.h>
+#include <Resourses.h>
 #include <Reflect.h>
 #include <IMap.h>
 #include <List.h>
 #include <Lambda.h>
 #include <GameClass.h>
 #include <org/flixel/FlxGame.h>
+#include <EReg.h>
 #include <Date.h>
 #include <DocumentClass.h>
 #include <Main.h>
@@ -439,11 +449,14 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::display::Bitmap_obj::__register();
 ::flash::_Vector::Vector_Impl__obj::__register();
 ::flash::Memory_obj::__register();
+::entities::VerticalFlipper_obj::__register();
+::entities::TimePlusPlus_obj::__register();
+::entities::Spikes_obj::__register();
 ::entities::PlatformerPlayer_obj::__register();
-::org::flixel::FlxSprite_obj::__register();
-::org::flixel::FlxObject_obj::__register();
-::org::flixel::util::FlxPoint_obj::__register();
-::org::flixel::util::FlxRect_obj::__register();
+::entities::KillingEntity_obj::__register();
+::entities::HorizontalFlipper_obj::__register();
+::entities::Coin_obj::__register();
+::entities::BouncingEntity_obj::__register();
 ::cpp::zip::Uncompress_obj::__register();
 ::cpp::zip::Flush_obj::__register();
 ::cpp::zip::Compress_obj::__register();
@@ -454,6 +467,11 @@ hx::RegisterResources( hx::GetResources() );
 ::Util_obj::__register();
 ::Type_obj::__register();
 ::ValueType_obj::__register();
+::StunningEntity_obj::__register();
+::entities::Entity_obj::__register();
+::org::flixel::FlxSprite_obj::__register();
+::org::flixel::FlxObject_obj::__register();
+::org::flixel::util::FlxRect_obj::__register();
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
 ::Room_obj::__register();
@@ -461,14 +479,16 @@ hx::RegisterResources( hx::GetResources() );
 ::org::flixel::FlxTypedGroup_obj::__register();
 ::org::flixel::FlxBasic_obj::__register();
 ::Reg_obj::__register();
-::Resourses_obj::__register();
+::org::flixel::util::FlxPoint_obj::__register();
 ::flash::geom::Point_obj::__register();
+::Resourses_obj::__register();
 ::Reflect_obj::__register();
 ::IMap_obj::__register();
 ::List_obj::__register();
 ::Lambda_obj::__register();
 ::GameClass_obj::__register();
 ::org::flixel::FlxGame_obj::__register();
+::EReg_obj::__register();
 ::Date_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
@@ -494,6 +514,7 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::ui::Multitouch_obj::__init__();
 ::flash::utils::ByteArray_obj::__init__();
 ::cpp::Lib_obj::__boot();
+::EReg_obj::__boot();
 ::Xml_obj::__boot();
 ::cpp::rtti::FieldNumericIntegerLookup_obj::__boot();
 ::cpp::vm::Gc_obj::__boot();
@@ -527,8 +548,9 @@ hx::RegisterResources( hx::GetResources() );
 ::List_obj::__boot();
 ::IMap_obj::__boot();
 ::Reflect_obj::__boot();
-::flash::geom::Point_obj::__boot();
 ::Resourses_obj::__boot();
+::flash::geom::Point_obj::__boot();
+::org::flixel::util::FlxPoint_obj::__boot();
 ::Reg_obj::__boot();
 ::org::flixel::FlxBasic_obj::__boot();
 ::org::flixel::FlxTypedGroup_obj::__boot();
@@ -536,15 +558,23 @@ hx::RegisterResources( hx::GetResources() );
 ::Room_obj::__boot();
 ::StringBuf_obj::__boot();
 ::StringTools_obj::__boot();
+::org::flixel::util::FlxRect_obj::__boot();
+::org::flixel::FlxObject_obj::__boot();
+::org::flixel::FlxSprite_obj::__boot();
+::entities::Entity_obj::__boot();
+::StunningEntity_obj::__boot();
 ::ValueType_obj::__boot();
 ::Type_obj::__boot();
 ::Util_obj::__boot();
 ::XmlType_obj::__boot();
-::org::flixel::util::FlxRect_obj::__boot();
-::org::flixel::util::FlxPoint_obj::__boot();
-::org::flixel::FlxObject_obj::__boot();
-::org::flixel::FlxSprite_obj::__boot();
+::entities::BouncingEntity_obj::__boot();
+::entities::Coin_obj::__boot();
+::entities::HorizontalFlipper_obj::__boot();
+::entities::KillingEntity_obj::__boot();
 ::entities::PlatformerPlayer_obj::__boot();
+::entities::Spikes_obj::__boot();
+::entities::TimePlusPlus_obj::__boot();
+::entities::VerticalFlipper_obj::__boot();
 ::flash::Memory_obj::__boot();
 ::flash::_Vector::Vector_Impl__obj::__boot();
 ::flash::display::Bitmap_obj::__boot();

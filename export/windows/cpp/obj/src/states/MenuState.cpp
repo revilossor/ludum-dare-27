@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_Reg
+#include <Reg.h>
+#endif
 #ifndef INCLUDED_Util
 #include <Util.h>
 #endif
@@ -76,11 +79,11 @@ Dynamic MenuState_obj::__Create(hx::DynamicArray inArgs)
 
 Void MenuState_obj::keyHandling( ){
 {
-		HX_STACK_PUSH("MenuState::keyHandling","states/MenuState.hx",45);
+		HX_STACK_PUSH("MenuState::keyHandling","states/MenuState.hx",46);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(45)
+		HX_STACK_LINE(46)
 		if ((::org::flixel::FlxG_obj::keys->justReleased(HX_CSTRING("SPACE")))){
-			HX_STACK_LINE(46)
+			HX_STACK_LINE(47)
 			::org::flixel::FlxG_obj::switchState(::states::PlatformerState_obj::__new(null()));
 		}
 	}
@@ -92,11 +95,11 @@ HX_DEFINE_DYNAMIC_FUNC0(MenuState_obj,keyHandling,(void))
 
 Void MenuState_obj::update( ){
 {
-		HX_STACK_PUSH("MenuState::update","states/MenuState.hx",40);
+		HX_STACK_PUSH("MenuState::update","states/MenuState.hx",41);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(41)
-		this->keyHandling();
 		HX_STACK_LINE(42)
+		this->keyHandling();
+		HX_STACK_LINE(43)
 		this->super::update();
 	}
 return null();
@@ -105,11 +108,11 @@ return null();
 
 Void MenuState_obj::destroy( ){
 {
-		HX_STACK_PUSH("MenuState::destroy","states/MenuState.hx",35);
+		HX_STACK_PUSH("MenuState::destroy","states/MenuState.hx",36);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(36)
-		this->_pressSpaceText = null();
 		HX_STACK_LINE(37)
+		this->_pressSpaceText = null();
+		HX_STACK_LINE(38)
 		this->super::destroy();
 	}
 return null();
@@ -118,9 +121,9 @@ return null();
 
 Void MenuState_obj::addItems( ){
 {
-		HX_STACK_PUSH("MenuState::addItems","states/MenuState.hx",31);
+		HX_STACK_PUSH("MenuState::addItems","states/MenuState.hx",32);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(31)
+		HX_STACK_LINE(32)
 		this->add(this->_pressSpaceText);
 	}
 return null();
@@ -140,12 +143,14 @@ Void MenuState_obj::create( ){
 		HX_STACK_LINE(24)
 		::org::flixel::FlxG_obj::mouse->set_useSystemCursor(true);
 		HX_STACK_LINE(25)
-		this->_pressSpaceText = ::org::flixel::FlxText_obj::__new((int)0,(int)400,(int)800,HX_CSTRING("Press Space To Play"),(int)36,null(),null());
+		::Reg_obj::roomIndex = (int)0;
 		HX_STACK_LINE(26)
-		this->_pressSpaceText->setFormat(null(),(int)36,(int)-65281,HX_CSTRING("center"),null(),null());
+		this->_pressSpaceText = ::org::flixel::FlxText_obj::__new((int)0,(int)400,(int)800,HX_CSTRING("Press Space To Play"),(int)36,null(),null());
 		HX_STACK_LINE(27)
-		this->addItems();
+		this->_pressSpaceText->setFormat(null(),(int)36,(int)-65281,HX_CSTRING("center"),null(),null());
 		HX_STACK_LINE(28)
+		this->addItems();
+		HX_STACK_LINE(29)
 		this->super::create();
 	}
 return null();

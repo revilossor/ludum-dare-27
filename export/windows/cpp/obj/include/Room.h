@@ -40,6 +40,12 @@ class HXCPP_CLASS_ATTRIBUTES  Room_obj : public ::org::flixel::FlxGroup_obj{
 		virtual Float get_width( );
 		Dynamic get_width_dyn();
 
+		virtual ::org::flixel::FlxGroup get_allBaddies( );
+		Dynamic get_allBaddies_dyn();
+
+		virtual ::org::flixel::FlxGroup get_allCoins( );
+		Dynamic get_allCoins_dyn();
+
 		virtual ::org::flixel::FlxTilemap get__tiles( );
 		Dynamic get__tiles_dyn();
 
@@ -47,12 +53,21 @@ class HXCPP_CLASS_ATTRIBUTES  Room_obj : public ::org::flixel::FlxGroup_obj{
 
 		virtual Void destroy( );
 
+		virtual Void addBaddies( );
+		Dynamic addBaddies_dyn();
+
+		virtual Void addCoins( );
+		Dynamic addCoins_dyn();
+
 		virtual Void addItems( );
 		Dynamic addItems_dyn();
 
 		Float height;
 		Float width;
 		int index;
+		::org::flixel::FlxGroup allBaddies;
+		::org::flixel::FlxGroup allCoins;
+		::org::flixel::FlxTilemap _bg;
 		::org::flixel::FlxTilemap _tiles;
 };
 

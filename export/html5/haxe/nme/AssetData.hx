@@ -97,16 +97,28 @@ class AssetData {
 			type.set ("assets/gfx/coin.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/gfx/coin_tiles.png", "assets/gfx/coin_tiles.png");
 			type.set ("assets/gfx/coin_tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/gfx/mapeditor_entities.png", "assets/gfx/mapeditor_entities.png");
+			type.set ("assets/gfx/mapeditor_entities.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/gfx/outDoor.png", "assets/gfx/outDoor.png");
 			type.set ("assets/gfx/outDoor.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/gfx/platformer_player.png", "assets/gfx/platformer_player.png");
 			type.set ("assets/gfx/platformer_player.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/gfx/template_tiles.png", "assets/gfx/template_tiles.png");
 			type.set ("assets/gfx/template_tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_map_1_baddies.csv", "assets/maps/template/mapCSV_map_1_baddies.csv");
+			type.set ("assets/maps/template/mapCSV_map_1_baddies.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/mapCSV_map_1_entities.csv", "assets/maps/template/mapCSV_map_1_entities.csv");
 			type.set ("assets/maps/template/mapCSV_map_1_entities.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/mapCSV_map_1_tiles.csv", "assets/maps/template/mapCSV_map_1_tiles.csv");
 			type.set ("assets/maps/template/mapCSV_map_1_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_map_2_baddies.csv", "assets/maps/template/mapCSV_map_2_baddies.csv");
+			type.set ("assets/maps/template/mapCSV_map_2_baddies.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_map_2_entities.csv", "assets/maps/template/mapCSV_map_2_entities.csv");
+			type.set ("assets/maps/template/mapCSV_map_2_entities.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_map_2_tiles.csv", "assets/maps/template/mapCSV_map_2_tiles.csv");
+			type.set ("assets/maps/template/mapCSV_map_2_tiles.csv", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/mapCSV_template_map_baddies.csv", "assets/maps/template/mapCSV_template_map_baddies.csv");
+			type.set ("assets/maps/template/mapCSV_template_map_baddies.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/mapCSV_template_map_entities.csv", "assets/maps/template/mapCSV_template_map_entities.csv");
 			type.set ("assets/maps/template/mapCSV_template_map_entities.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/mapCSV_template_map_tiles.csv", "assets/maps/template/mapCSV_template_map_tiles.csv");
@@ -115,6 +127,10 @@ class AssetData {
 			type.set ("assets/maps/template/map_1.dam", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/map_1.dam.bak", "assets/maps/template/map_1.dam.bak");
 			type.set ("assets/maps/template/map_1.dam.bak", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/map_2.dam", "assets/maps/template/map_2.dam");
+			type.set ("assets/maps/template/map_2.dam", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/maps/template/map_2.dam.bak", "assets/maps/template/map_2.dam.bak");
+			type.set ("assets/maps/template/map_2.dam.bak", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/template_map.dam", "assets/maps/template/template_map.dam");
 			type.set ("assets/maps/template/template_map.dam", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/maps/template/template_map.dam.bak", "assets/maps/template/template_map.dam.bak");
@@ -157,6 +173,14 @@ class NME_assets_data_courier_ttf extends flash.text.Font { }
 
 
 class NME_assets_data_nokiafc22_ttf extends flash.text.Font { }
+
+
+
+
+
+
+
+
 
 
 

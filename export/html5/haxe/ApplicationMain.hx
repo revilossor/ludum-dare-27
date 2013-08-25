@@ -230,6 +230,11 @@ class ApplicationMain {
 		
 		
 		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/mapeditor_entities.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
 		loaders.set("assets/gfx/outDoor.png", loader);
 		total ++;
 		
@@ -246,6 +251,12 @@ class ApplicationMain {
 		
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_1_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv", urlLoader);
 		total ++;
 		
@@ -253,6 +264,30 @@ class ApplicationMain {
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_2_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_2_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_2_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_template_map_baddies.csv", urlLoader);
 		total ++;
 		
 		
@@ -277,6 +312,18 @@ class ApplicationMain {
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/map_1.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_2.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_2.dam.bak", urlLoader);
 		total ++;
 		
 		

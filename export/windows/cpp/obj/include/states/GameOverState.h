@@ -22,10 +22,10 @@ class HXCPP_CLASS_ATTRIBUTES  GameOverState_obj : public ::org::flixel::FlxState
 		typedef ::org::flixel::FlxState_obj super;
 		typedef GameOverState_obj OBJ_;
 		GameOverState_obj();
-		Void __construct();
+		Void __construct(::String __o_msg);
 
 	public:
-		static hx::ObjectPtr< GameOverState_obj > __new();
+		static hx::ObjectPtr< GameOverState_obj > __new(::String __o_msg);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		~GameOverState_obj();
@@ -46,6 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  GameOverState_obj : public ::org::flixel::FlxState
 
 		virtual Void create( );
 
+		::String message;
 		::org::flixel::FlxText spaceText;
 		::org::flixel::FlxText goverText;
 };

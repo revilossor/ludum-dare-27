@@ -40,6 +40,8 @@ class HXCPP_CLASS_ATTRIBUTES  PlatformerPlayer_obj : public ::org::flixel::FlxSp
 
 		virtual Void destroy( );
 
+		bool isJumping;
+		int jumpTimer;
 		bool onFloor;
 };
 

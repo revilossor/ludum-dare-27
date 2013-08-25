@@ -126,45 +126,76 @@ ApplicationMain.main = function() {
 	ApplicationMain.loaders.set("assets/gfx/coin_tiles.png",loader33);
 	ApplicationMain.total++;
 	var loader34 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader34);
+	ApplicationMain.loaders.set("assets/gfx/mapeditor_entities.png",loader34);
 	ApplicationMain.total++;
 	var loader35 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader35);
+	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader35);
 	ApplicationMain.total++;
 	var loader36 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader36);
+	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader36);
+	ApplicationMain.total++;
+	var loader37 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader37);
 	ApplicationMain.total++;
 	var urlLoader = new flash.net.URLLoader();
 	urlLoader.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv",urlLoader);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_baddies.csv",urlLoader);
 	ApplicationMain.total++;
 	var urlLoader1 = new flash.net.URLLoader();
 	urlLoader1.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader1);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv",urlLoader1);
 	ApplicationMain.total++;
 	var urlLoader2 = new flash.net.URLLoader();
 	urlLoader2.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv",urlLoader2);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader2);
 	ApplicationMain.total++;
 	var urlLoader3 = new flash.net.URLLoader();
 	urlLoader3.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader3);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_baddies.csv",urlLoader3);
 	ApplicationMain.total++;
 	var urlLoader4 = new flash.net.URLLoader();
 	urlLoader4.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader4);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_entities.csv",urlLoader4);
 	ApplicationMain.total++;
 	var urlLoader5 = new flash.net.URLLoader();
 	urlLoader5.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader5);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_tiles.csv",urlLoader5);
 	ApplicationMain.total++;
 	var urlLoader6 = new flash.net.URLLoader();
 	urlLoader6.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader6);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_baddies.csv",urlLoader6);
 	ApplicationMain.total++;
 	var urlLoader7 = new flash.net.URLLoader();
 	urlLoader7.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader7);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv",urlLoader7);
+	ApplicationMain.total++;
+	var urlLoader8 = new flash.net.URLLoader();
+	urlLoader8.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader8);
+	ApplicationMain.total++;
+	var urlLoader9 = new flash.net.URLLoader();
+	urlLoader9.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader9);
+	ApplicationMain.total++;
+	var urlLoader10 = new flash.net.URLLoader();
+	urlLoader10.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader10);
+	ApplicationMain.total++;
+	var urlLoader11 = new flash.net.URLLoader();
+	urlLoader11.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam",urlLoader11);
+	ApplicationMain.total++;
+	var urlLoader12 = new flash.net.URLLoader();
+	urlLoader12.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam.bak",urlLoader12);
+	ApplicationMain.total++;
+	var urlLoader13 = new flash.net.URLLoader();
+	urlLoader13.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader13);
+	ApplicationMain.total++;
+	var urlLoader14 = new flash.net.URLLoader();
+	urlLoader14.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader14);
 	ApplicationMain.total++;
 	var resourcePrefix = "NME_:bitmap_";
 	var _g = 0, _g1 = haxe.Resource.listNames();
@@ -183,16 +214,16 @@ ApplicationMain.main = function() {
 		var $it0 = ApplicationMain.loaders.keys();
 		while( $it0.hasNext() ) {
 			var path = $it0.next();
-			var loader37 = ApplicationMain.loaders.get(path);
-			loader37.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
-			loader37.load(new flash.net.URLRequest(path));
+			var loader38 = ApplicationMain.loaders.get(path);
+			loader38.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
+			loader38.load(new flash.net.URLRequest(path));
 		}
 		var $it1 = ApplicationMain.urlLoaders.keys();
 		while( $it1.hasNext() ) {
 			var path = $it1.next();
-			var urlLoader8 = ApplicationMain.urlLoaders.get(path);
-			urlLoader8.addEventListener("complete",ApplicationMain.loader_onComplete);
-			urlLoader8.load(new flash.net.URLRequest(path));
+			var urlLoader15 = ApplicationMain.urlLoaders.get(path);
+			urlLoader15.addEventListener("complete",ApplicationMain.loader_onComplete);
+			urlLoader15.load(new flash.net.URLRequest(path));
 		}
 	}
 }
@@ -2028,6 +2059,9 @@ Reflect.makeVarArgs = function(f) {
 		return f(a);
 	};
 }
+var Resourses = function() { }
+$hxClasses["Resourses"] = Resourses;
+Resourses.__name__ = ["Resourses"];
 flash.geom = {}
 flash.geom.Point = function(inX,inY) {
 	if(inY == null) inY = 0;
@@ -2078,9 +2112,57 @@ flash.geom.Point.prototype = {
 	,__class__: flash.geom.Point
 	,__properties__: {get_length:"get_length"}
 }
-var Resourses = function() { }
-$hxClasses["Resourses"] = Resourses;
-Resourses.__name__ = ["Resourses"];
+org.flixel.util = {}
+org.flixel.util.FlxPoint = function(X,Y) {
+	if(Y == null) Y = 0;
+	if(X == null) X = 0;
+	this.x = X;
+	this.y = Y;
+};
+$hxClasses["org.flixel.util.FlxPoint"] = org.flixel.util.FlxPoint;
+org.flixel.util.FlxPoint.__name__ = ["org","flixel","util","FlxPoint"];
+org.flixel.util.FlxPoint.prototype = {
+	toString: function() {
+		return (function($this) {
+			var $r;
+			var s = Type.getClassName(Type.getClass($this));
+			if(s != null) {
+				s = StringTools.replace(s,"::",".");
+				s = HxOverrides.substr(s,s.lastIndexOf(".") + 1,null);
+			}
+			$r = s;
+			return $r;
+		}(this));
+	}
+	,copyToFlash: function(FlashPoint) {
+		FlashPoint.x = this.x;
+		FlashPoint.y = this.y;
+		return FlashPoint;
+	}
+	,copyFromFlash: function(FlashPoint) {
+		this.x = FlashPoint.x;
+		this.y = FlashPoint.y;
+		return this;
+	}
+	,copyTo: function(point) {
+		point.x = this.x;
+		point.y = this.y;
+		return point;
+	}
+	,copyFrom: function(point) {
+		this.x = point.x;
+		this.y = point.y;
+		return this;
+	}
+	,make: function(X,Y) {
+		if(Y == null) Y = 0;
+		if(X == null) X = 0;
+		this.x = X;
+		this.y = Y;
+		return this;
+	}
+	,__class__: org.flixel.util.FlxPoint
+}
 var Reg = function() { }
 $hxClasses["Reg"] = Reg;
 Reg.__name__ = ["Reg"];
@@ -2569,6 +2651,9 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	,get_width: function() {
 		return this.width;
 	}
+	,get_allBaddies: function() {
+		return this.allBaddies;
+	}
 	,get_allCoins: function() {
 		return this.allCoins;
 	}
@@ -2581,16 +2666,36 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	,destroy: function() {
 		org.flixel.FlxGroup.prototype.destroy.call(this);
 	}
-	,addEntities: function() {
-		this.allCoins = new org.flixel.FlxGroup();
-		var entitiesCsv = openfl.Assets.getText(Reg.entities[this.index]);
-		var entityData = entitiesCsv.split(",");
+	,addBaddies: function() {
+		this.allBaddies = new org.flixel.FlxGroup();
+		var entitiesCsv = openfl.Assets.getText(Reg.baddies[this.index]);
+		var r = new EReg("([0-9][\r\n\t])","g");
+		var withCommas = r.replace(entitiesCsv,"$1,");
+		var entityData = withCommas.split(",");
 		var xIndex = 0;
 		var yIndex = 0;
 		var _g1 = 0, _g = entityData.length;
 		while(_g1 < _g) {
 			var n = _g1++;
-			if(xIndex == 0 && n > this.get__tiles().widthInTiles) yIndex++;
+			if(xIndex == this.get__tiles().widthInTiles - 1) yIndex++;
+			xIndex = n % this.get__tiles().widthInTiles;
+			var thisDrawPoint = new flash.geom.Point(xIndex * 32,yIndex * 32);
+			if(entityData[n] == "1") this.get_allBaddies().add(new entities.KillingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "2") this.get_allBaddies().add(new entities.BouncingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "3") this.get_allBaddies().add(new entities.HorizontalFlipper(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "4") this.get_allBaddies().add(new entities.VerticalFlipper(thisDrawPoint.x,thisDrawPoint.y));
+		}
+		this.add(this.get_allBaddies());
+	}
+	,addCoins: function() {
+		this.allCoins = new org.flixel.FlxGroup();
+		var entitiesCsv = openfl.Assets.getText(Reg.entities[this.index]);
+		var r = new EReg("([0-9][\r\n\t])","g");
+		var withCommas = r.replace(entitiesCsv,"$1,");
+		var entityData = withCommas.split(",");
+		var xIndex = 0;
+		var yIndex = 0;
+		var _g1 = 0, _g = entityData.length;
+		while(_g1 < _g) {
+			var n = _g1++;
+			if(xIndex + 1 == this.get__tiles().widthInTiles) yIndex++;
 			xIndex = n % this.get__tiles().widthInTiles;
 			var thisDrawPoint = new flash.geom.Point(xIndex * 32,yIndex * 32);
 			if(entityData[n] == "1") this.get_allCoins().add(new entities.Coin(thisDrawPoint.x + 8,thisDrawPoint.y + 8));
@@ -2600,10 +2705,11 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	,addItems: function() {
 		Util.log(this,"adding tiles");
 		this.add(this.get__tiles());
-		this.addEntities();
+		this.addCoins();
+		this.addBaddies();
 	}
 	,__class__: Room
-	,__properties__: $extend(org.flixel.FlxGroup.prototype.__properties__,{get__tiles:"get__tiles",get_allCoins:"get_allCoins",get_width:"get_width",get_height:"get_height"})
+	,__properties__: $extend(org.flixel.FlxGroup.prototype.__properties__,{get__tiles:"get__tiles",get_allCoins:"get_allCoins",get_allBaddies:"get_allBaddies",get_width:"get_width",get_height:"get_height"})
 });
 var Std = function() { }
 $hxClasses["Std"] = Std;
@@ -2666,171 +2772,6 @@ StringTools.hex = function(n,digits) {
 	if(digits != null) while(s.length < digits) s = "0" + s;
 	return s;
 }
-var ValueType = $hxClasses["ValueType"] = { __ename__ : ["ValueType"], __constructs__ : ["TNull","TInt","TFloat","TBool","TObject","TFunction","TClass","TEnum","TUnknown"] }
-ValueType.TNull = ["TNull",0];
-ValueType.TNull.toString = $estr;
-ValueType.TNull.__enum__ = ValueType;
-ValueType.TInt = ["TInt",1];
-ValueType.TInt.toString = $estr;
-ValueType.TInt.__enum__ = ValueType;
-ValueType.TFloat = ["TFloat",2];
-ValueType.TFloat.toString = $estr;
-ValueType.TFloat.__enum__ = ValueType;
-ValueType.TBool = ["TBool",3];
-ValueType.TBool.toString = $estr;
-ValueType.TBool.__enum__ = ValueType;
-ValueType.TObject = ["TObject",4];
-ValueType.TObject.toString = $estr;
-ValueType.TObject.__enum__ = ValueType;
-ValueType.TFunction = ["TFunction",5];
-ValueType.TFunction.toString = $estr;
-ValueType.TFunction.__enum__ = ValueType;
-ValueType.TClass = function(c) { var $x = ["TClass",6,c]; $x.__enum__ = ValueType; $x.toString = $estr; return $x; }
-ValueType.TEnum = function(e) { var $x = ["TEnum",7,e]; $x.__enum__ = ValueType; $x.toString = $estr; return $x; }
-ValueType.TUnknown = ["TUnknown",8];
-ValueType.TUnknown.toString = $estr;
-ValueType.TUnknown.__enum__ = ValueType;
-var Type = function() { }
-$hxClasses["Type"] = Type;
-Type.__name__ = ["Type"];
-Type.getClass = function(o) {
-	if(o == null) return null;
-	return o.__class__;
-}
-Type.getClassName = function(c) {
-	var a = c.__name__;
-	return a.join(".");
-}
-Type.getEnumName = function(e) {
-	var a = e.__ename__;
-	return a.join(".");
-}
-Type.resolveClass = function(name) {
-	var cl = $hxClasses[name];
-	if(cl == null || !cl.__name__) return null;
-	return cl;
-}
-Type.resolveEnum = function(name) {
-	var e = $hxClasses[name];
-	if(e == null || !e.__ename__) return null;
-	return e;
-}
-Type.createInstance = function(cl,args) {
-	switch(args.length) {
-	case 0:
-		return new cl();
-	case 1:
-		return new cl(args[0]);
-	case 2:
-		return new cl(args[0],args[1]);
-	case 3:
-		return new cl(args[0],args[1],args[2]);
-	case 4:
-		return new cl(args[0],args[1],args[2],args[3]);
-	case 5:
-		return new cl(args[0],args[1],args[2],args[3],args[4]);
-	case 6:
-		return new cl(args[0],args[1],args[2],args[3],args[4],args[5]);
-	case 7:
-		return new cl(args[0],args[1],args[2],args[3],args[4],args[5],args[6]);
-	case 8:
-		return new cl(args[0],args[1],args[2],args[3],args[4],args[5],args[6],args[7]);
-	default:
-		throw "Too many arguments";
-	}
-	return null;
-}
-Type.createEmptyInstance = function(cl) {
-	function empty() {}; empty.prototype = cl.prototype;
-	return new empty();
-}
-Type.createEnum = function(e,constr,params) {
-	var f = Reflect.field(e,constr);
-	if(f == null) throw "No such constructor " + constr;
-	if(Reflect.isFunction(f)) {
-		if(params == null) throw "Constructor " + constr + " need parameters";
-		return f.apply(e,params);
-	}
-	if(params != null && params.length != 0) throw "Constructor " + constr + " does not need parameters";
-	return f;
-}
-Type.getEnumConstructs = function(e) {
-	var a = e.__constructs__;
-	return a.slice();
-}
-Type["typeof"] = function(v) {
-	var _g = typeof(v);
-	switch(_g) {
-	case "boolean":
-		return ValueType.TBool;
-	case "string":
-		return ValueType.TClass(String);
-	case "number":
-		if(Math.ceil(v) == v % 2147483648.0) return ValueType.TInt;
-		return ValueType.TFloat;
-	case "object":
-		if(v == null) return ValueType.TNull;
-		var e = v.__enum__;
-		if(e != null) return ValueType.TEnum(e);
-		var c = v.__class__;
-		if(c != null) return ValueType.TClass(c);
-		return ValueType.TObject;
-	case "function":
-		if(v.__name__ || v.__ename__) return ValueType.TObject;
-		return ValueType.TFunction;
-	case "undefined":
-		return ValueType.TNull;
-	default:
-		return ValueType.TUnknown;
-	}
-}
-var Util = function() { }
-$hxClasses["Util"] = Util;
-Util.__name__ = ["Util"];
-Util.log = function(from,message) {
-	console.log("[" + Std.string(from) + "] " + message);
-}
-var XmlType = $hxClasses["XmlType"] = { __ename__ : ["XmlType"], __constructs__ : [] }
-var Xml = function() { }
-$hxClasses["Xml"] = Xml;
-Xml.__name__ = ["Xml"];
-Xml.prototype = {
-	elements: function() {
-		if(this._children == null) throw "bad nodetype";
-		return { cur : 0, x : this._children, hasNext : function() {
-			var k = this.cur;
-			var l = this.x.length;
-			while(k < l) {
-				if(this.x[k].nodeType == Xml.Element) break;
-				k += 1;
-			}
-			this.cur = k;
-			return k < l;
-		}, next : function() {
-			var k = this.cur;
-			var l = this.x.length;
-			while(k < l) {
-				var n = this.x[k];
-				k += 1;
-				if(n.nodeType == Xml.Element) {
-					this.cur = k;
-					return n;
-				}
-			}
-			return null;
-		}};
-	}
-	,get: function(att) {
-		if(this.nodeType != Xml.Element) throw "bad nodeType";
-		return this._attributes.get(att);
-	}
-	,get_nodeName: function() {
-		if(this.nodeType != Xml.Element) throw "bad nodeType";
-		return this._nodeName;
-	}
-	,__class__: Xml
-}
-org.flixel.util = {}
 org.flixel.util.FlxRect = function(X,Y,Width,Height) {
 	if(Height == null) Height = 0;
 	if(Width == null) Width = 0;
@@ -2900,56 +2841,6 @@ org.flixel.util.FlxRect.prototype = {
 	}
 	,__class__: org.flixel.util.FlxRect
 	,__properties__: {get_left:"get_left",get_right:"get_right",get_top:"get_top",get_bottom:"get_bottom"}
-}
-org.flixel.util.FlxPoint = function(X,Y) {
-	if(Y == null) Y = 0;
-	if(X == null) X = 0;
-	this.x = X;
-	this.y = Y;
-};
-$hxClasses["org.flixel.util.FlxPoint"] = org.flixel.util.FlxPoint;
-org.flixel.util.FlxPoint.__name__ = ["org","flixel","util","FlxPoint"];
-org.flixel.util.FlxPoint.prototype = {
-	toString: function() {
-		return (function($this) {
-			var $r;
-			var s = Type.getClassName(Type.getClass($this));
-			if(s != null) {
-				s = StringTools.replace(s,"::",".");
-				s = HxOverrides.substr(s,s.lastIndexOf(".") + 1,null);
-			}
-			$r = s;
-			return $r;
-		}(this));
-	}
-	,copyToFlash: function(FlashPoint) {
-		FlashPoint.x = this.x;
-		FlashPoint.y = this.y;
-		return FlashPoint;
-	}
-	,copyFromFlash: function(FlashPoint) {
-		this.x = FlashPoint.x;
-		this.y = FlashPoint.y;
-		return this;
-	}
-	,copyTo: function(point) {
-		point.x = this.x;
-		point.y = this.y;
-		return point;
-	}
-	,copyFrom: function(point) {
-		this.x = point.x;
-		this.y = point.y;
-		return this;
-	}
-	,make: function(X,Y) {
-		if(Y == null) Y = 0;
-		if(X == null) X = 0;
-		this.x = X;
-		this.y = Y;
-		return this;
-	}
-	,__class__: org.flixel.util.FlxPoint
 }
 org.flixel.FlxObject = function(X,Y,Width,Height) {
 	if(Height == null) Height = 0;
@@ -4346,6 +4237,271 @@ org.flixel.FlxSprite.prototype = $extend(org.flixel.FlxObject.prototype,{
 	,__properties__: $extend(org.flixel.FlxObject.prototype.__properties__,{set_facing:"set_facing",set_color:"set_color",get_color:"get_color",set_frame:"set_frame",get_frame:"get_frame",get_flipped:"get_flipped",set_curAnim:"set_curAnim",get_curAnim:"get_curAnim",set_pixels:"set_pixels",get_pixels:"get_pixels",set_alpha:"set_alpha",set_frameName:"set_frameName",get_frameName:"get_frameName",set_antialiasing:"set_antialiasing",get_simpleRender:"get_simpleRender",set_blend:"set_blend",get_blend:"get_blend"})
 });
 var entities = {}
+entities.Entity = function(xp,yp) {
+	org.flixel.FlxSprite.call(this,xp,yp);
+	this.set_forceComplexRender(true);
+};
+$hxClasses["entities.Entity"] = entities.Entity;
+entities.Entity.__name__ = ["entities","Entity"];
+entities.Entity.__super__ = org.flixel.FlxSprite;
+entities.Entity.prototype = $extend(org.flixel.FlxSprite.prototype,{
+	magnify: function(v,m) {
+		try {
+			return new org.flixel.util.FlxPoint(v.x * m,v.y * m);
+		} catch( e ) {
+			if( js.Boot.__instanceof(e,String) ) {
+				return new org.flixel.util.FlxPoint();
+			} else throw(e);
+		}
+	}
+	,getUnit: function(v) {
+		var mag = this.getMagnitude(v);
+		return new org.flixel.util.FlxPoint(v.x / mag,v.y / mag);
+	}
+	,getMagnitudeSq: function(v) {
+		return Math.pow(v.x,2) + Math.pow(v.y,2);
+	}
+	,getMagnitude: function(v) {
+		return Math.sqrt(Math.pow(v.x,2) + Math.pow(v.y,2));
+	}
+	,getDistanceBetween: function(a,b) {
+		return this.getMagnitude(this.getBetween(a,b));
+	}
+	,getBetween: function(a,b) {
+		return new org.flixel.util.FlxPoint(b.x - a.x,b.y - a.y);
+	}
+	,getUnitBetween: function(a,b) {
+		return this.getUnit(this.getBetween(a,b));
+	}
+	,mulEq: function(a,b) {
+		return new org.flixel.util.FlxPoint(a.x * b.x,a.y * b.y);
+	}
+	,divEq: function(a,b) {
+		return new org.flixel.util.FlxPoint(a.x / b.x,a.y / b.y);
+	}
+	,subEq: function(a,b) {
+		return new org.flixel.util.FlxPoint(a.x - b.x,a.y - b.y);
+	}
+	,addEq: function(a,b) {
+		return new org.flixel.util.FlxPoint(a.x + b.x,a.y + b.y);
+	}
+	,fleeAtSpeed: function(e,t,s) {
+		return this.magnify(this.getUnitBetween(t,e),s);
+	}
+	,seekAtSpeed: function(e,t,s) {
+		return this.magnify(this.getUnitBetween(e,t),s);
+	}
+	,flee: function(e,t) {
+		return this.getUnitBetween(t,e);
+	}
+	,seek: function(e,t) {
+		return this.getUnitBetween(e,t);
+	}
+	,__class__: entities.Entity
+});
+var StunningEntity = function(xp,yp) {
+	entities.Entity.call(this,xp,yp);
+	this.makeGraphic(32,32,-256);
+	this.type = "StunningEntity";
+	this.upVect = new org.flixel.util.FlxPoint();
+	this.downVect = new org.flixel.util.FlxPoint();
+	this.isGoingUp = true;
+};
+$hxClasses["StunningEntity"] = StunningEntity;
+StunningEntity.__name__ = ["StunningEntity"];
+StunningEntity.__super__ = entities.Entity;
+StunningEntity.prototype = $extend(entities.Entity.prototype,{
+	__class__: StunningEntity
+});
+var ValueType = $hxClasses["ValueType"] = { __ename__ : ["ValueType"], __constructs__ : ["TNull","TInt","TFloat","TBool","TObject","TFunction","TClass","TEnum","TUnknown"] }
+ValueType.TNull = ["TNull",0];
+ValueType.TNull.toString = $estr;
+ValueType.TNull.__enum__ = ValueType;
+ValueType.TInt = ["TInt",1];
+ValueType.TInt.toString = $estr;
+ValueType.TInt.__enum__ = ValueType;
+ValueType.TFloat = ["TFloat",2];
+ValueType.TFloat.toString = $estr;
+ValueType.TFloat.__enum__ = ValueType;
+ValueType.TBool = ["TBool",3];
+ValueType.TBool.toString = $estr;
+ValueType.TBool.__enum__ = ValueType;
+ValueType.TObject = ["TObject",4];
+ValueType.TObject.toString = $estr;
+ValueType.TObject.__enum__ = ValueType;
+ValueType.TFunction = ["TFunction",5];
+ValueType.TFunction.toString = $estr;
+ValueType.TFunction.__enum__ = ValueType;
+ValueType.TClass = function(c) { var $x = ["TClass",6,c]; $x.__enum__ = ValueType; $x.toString = $estr; return $x; }
+ValueType.TEnum = function(e) { var $x = ["TEnum",7,e]; $x.__enum__ = ValueType; $x.toString = $estr; return $x; }
+ValueType.TUnknown = ["TUnknown",8];
+ValueType.TUnknown.toString = $estr;
+ValueType.TUnknown.__enum__ = ValueType;
+var Type = function() { }
+$hxClasses["Type"] = Type;
+Type.__name__ = ["Type"];
+Type.getClass = function(o) {
+	if(o == null) return null;
+	return o.__class__;
+}
+Type.getClassName = function(c) {
+	var a = c.__name__;
+	return a.join(".");
+}
+Type.getEnumName = function(e) {
+	var a = e.__ename__;
+	return a.join(".");
+}
+Type.resolveClass = function(name) {
+	var cl = $hxClasses[name];
+	if(cl == null || !cl.__name__) return null;
+	return cl;
+}
+Type.resolveEnum = function(name) {
+	var e = $hxClasses[name];
+	if(e == null || !e.__ename__) return null;
+	return e;
+}
+Type.createInstance = function(cl,args) {
+	switch(args.length) {
+	case 0:
+		return new cl();
+	case 1:
+		return new cl(args[0]);
+	case 2:
+		return new cl(args[0],args[1]);
+	case 3:
+		return new cl(args[0],args[1],args[2]);
+	case 4:
+		return new cl(args[0],args[1],args[2],args[3]);
+	case 5:
+		return new cl(args[0],args[1],args[2],args[3],args[4]);
+	case 6:
+		return new cl(args[0],args[1],args[2],args[3],args[4],args[5]);
+	case 7:
+		return new cl(args[0],args[1],args[2],args[3],args[4],args[5],args[6]);
+	case 8:
+		return new cl(args[0],args[1],args[2],args[3],args[4],args[5],args[6],args[7]);
+	default:
+		throw "Too many arguments";
+	}
+	return null;
+}
+Type.createEmptyInstance = function(cl) {
+	function empty() {}; empty.prototype = cl.prototype;
+	return new empty();
+}
+Type.createEnum = function(e,constr,params) {
+	var f = Reflect.field(e,constr);
+	if(f == null) throw "No such constructor " + constr;
+	if(Reflect.isFunction(f)) {
+		if(params == null) throw "Constructor " + constr + " need parameters";
+		return f.apply(e,params);
+	}
+	if(params != null && params.length != 0) throw "Constructor " + constr + " does not need parameters";
+	return f;
+}
+Type.getEnumConstructs = function(e) {
+	var a = e.__constructs__;
+	return a.slice();
+}
+Type["typeof"] = function(v) {
+	var _g = typeof(v);
+	switch(_g) {
+	case "boolean":
+		return ValueType.TBool;
+	case "string":
+		return ValueType.TClass(String);
+	case "number":
+		if(Math.ceil(v) == v % 2147483648.0) return ValueType.TInt;
+		return ValueType.TFloat;
+	case "object":
+		if(v == null) return ValueType.TNull;
+		var e = v.__enum__;
+		if(e != null) return ValueType.TEnum(e);
+		var c = v.__class__;
+		if(c != null) return ValueType.TClass(c);
+		return ValueType.TObject;
+	case "function":
+		if(v.__name__ || v.__ename__) return ValueType.TObject;
+		return ValueType.TFunction;
+	case "undefined":
+		return ValueType.TNull;
+	default:
+		return ValueType.TUnknown;
+	}
+}
+var Util = function() { }
+$hxClasses["Util"] = Util;
+Util.__name__ = ["Util"];
+Util.log = function(from,message) {
+	console.log("[" + Std.string(from) + "] " + message);
+}
+var XmlType = $hxClasses["XmlType"] = { __ename__ : ["XmlType"], __constructs__ : [] }
+var Xml = function() { }
+$hxClasses["Xml"] = Xml;
+Xml.__name__ = ["Xml"];
+Xml.prototype = {
+	elements: function() {
+		if(this._children == null) throw "bad nodetype";
+		return { cur : 0, x : this._children, hasNext : function() {
+			var k = this.cur;
+			var l = this.x.length;
+			while(k < l) {
+				if(this.x[k].nodeType == Xml.Element) break;
+				k += 1;
+			}
+			this.cur = k;
+			return k < l;
+		}, next : function() {
+			var k = this.cur;
+			var l = this.x.length;
+			while(k < l) {
+				var n = this.x[k];
+				k += 1;
+				if(n.nodeType == Xml.Element) {
+					this.cur = k;
+					return n;
+				}
+			}
+			return null;
+		}};
+	}
+	,get: function(att) {
+		if(this.nodeType != Xml.Element) throw "bad nodeType";
+		return this._attributes.get(att);
+	}
+	,get_nodeName: function() {
+		if(this.nodeType != Xml.Element) throw "bad nodeType";
+		return this._nodeName;
+	}
+	,__class__: Xml
+}
+entities.BouncingEntity = function(xp,yp) {
+	entities.Entity.call(this,xp,yp);
+	this.makeGraphic(32,32,-16776961);
+	this.type = "BouncingEntity";
+	this.speed = 175;
+};
+$hxClasses["entities.BouncingEntity"] = entities.BouncingEntity;
+entities.BouncingEntity.__name__ = ["entities","BouncingEntity"];
+entities.BouncingEntity.__super__ = entities.Entity;
+entities.BouncingEntity.prototype = $extend(entities.Entity.prototype,{
+	update: function() {
+		entities.Entity.prototype.update.call(this);
+		var myMidpoint = this.getMidpoint(null);
+		var distToPlayer = this.getDistanceBetween(myMidpoint,Reg.playerPosition);
+		if(distToPlayer < 400) {
+			var seekVect = this.seekAtSpeed(myMidpoint,Reg.playerPosition,this.speed);
+			this.velocity.x = seekVect.x;
+			this.velocity.y = seekVect.y;
+		} else {
+			this.velocity.x *= 0.9;
+			this.velocity.y *= 0.9;
+		}
+	}
+	,__class__: entities.BouncingEntity
+});
 entities.Coin = function(xp,yp) {
 	org.flixel.FlxSprite.call(this,xp,yp);
 	this.loadGraphic(Resourses.coin,false,false,16,16);
@@ -4359,6 +4515,40 @@ entities.Coin.prototype = $extend(org.flixel.FlxSprite.prototype,{
 	}
 	,__class__: entities.Coin
 });
+entities.HorizontalFlipper = function(xp,yp) {
+	StunningEntity.call(this,xp,yp);
+	this.upVect = new org.flixel.util.FlxPoint(200,0);
+	this.downVect = new org.flixel.util.FlxPoint(-200,0);
+	this.velocity = this.addEq(this.velocity,this.upVect);
+};
+$hxClasses["entities.HorizontalFlipper"] = entities.HorizontalFlipper;
+entities.HorizontalFlipper.__name__ = ["entities","HorizontalFlipper"];
+entities.HorizontalFlipper.__super__ = StunningEntity;
+entities.HorizontalFlipper.prototype = $extend(StunningEntity.prototype,{
+	__class__: entities.HorizontalFlipper
+});
+entities.KillingEntity = function(xp,yp) {
+	entities.Entity.call(this,xp,yp);
+	this.makeGraphic(32,32,-65281);
+	this.type = "KillingEntity";
+	this.speed = 150;
+	this.acceleration = new org.flixel.util.FlxPoint(0,500);
+};
+$hxClasses["entities.KillingEntity"] = entities.KillingEntity;
+entities.KillingEntity.__name__ = ["entities","KillingEntity"];
+entities.KillingEntity.__super__ = entities.Entity;
+entities.KillingEntity.prototype = $extend(entities.Entity.prototype,{
+	update: function() {
+		entities.Entity.prototype.update.call(this);
+		var myMidpoint = this.getMidpoint(null);
+		var distToPlayer = this.getDistanceBetween(myMidpoint,Reg.playerPosition);
+		if(distToPlayer < 400) {
+			var seekVect = this.seekAtSpeed(myMidpoint,Reg.playerPosition,this.speed);
+			this.velocity.x = seekVect.x;
+		} else this.velocity.x *= 0.9;
+	}
+	,__class__: entities.KillingEntity
+});
 entities.PlatformerPlayer = function(xp,yp) {
 	org.flixel.FlxSprite.call(this,xp,yp);
 	this.loadGraphic(Resourses.player_sprite,false,false,16,30);
@@ -4366,6 +4556,8 @@ entities.PlatformerPlayer = function(xp,yp) {
 	this.acceleration = new org.flixel.util.FlxPoint(0,500);
 	this.drag = new org.flixel.util.FlxPoint(50,50);
 	this.onFloor = false;
+	this.set_forceComplexRender(true);
+	this.jumpTimer = 10;
 };
 $hxClasses["entities.PlatformerPlayer"] = entities.PlatformerPlayer;
 entities.PlatformerPlayer.__name__ = ["entities","PlatformerPlayer"];
@@ -4375,11 +4567,21 @@ entities.PlatformerPlayer.prototype = $extend(org.flixel.FlxSprite.prototype,{
 		if(org.flixel.FlxG.keys.pressed("LEFT")) this.velocity.x -= 10;
 		if(org.flixel.FlxG.keys.pressed("RIGHT")) this.velocity.x += 10;
 		if(this.onFloor) {
+			this.jumpTimer = 10;
 			if(org.flixel.FlxG.keys.justPressed("UP")) {
-				Util.log(this,"jump");
+				Util.log(this,"start jump");
 				this.y -= 3;
-				this.velocity.y = -this.maxVelocity.y / 2;
+				this.jumpTimer--;
+				this.velocity.y = -this.maxVelocity.y / 10;
 			}
+		}
+		if(org.flixel.FlxG.keys.pressed("UP") && this.jumpTimer > 0) {
+			this.velocity.y -= this.maxVelocity.y / 20;
+			this.jumpTimer--;
+		}
+		if(org.flixel.FlxG.keys.justReleased("UP") || this.jumpTimer <= 0) {
+			Util.log(this,"end jump");
+			this.isJumping = false;
 		}
 		if(org.flixel.FlxG.keys.pressed("DOWN")) {
 		}
@@ -4387,11 +4589,24 @@ entities.PlatformerPlayer.prototype = $extend(org.flixel.FlxSprite.prototype,{
 	,update: function() {
 		org.flixel.FlxSprite.prototype.update.call(this);
 		this.keyHandling();
+		Reg.playerPosition = this.getMidpoint(null);
 	}
 	,destroy: function() {
 		org.flixel.FlxSprite.prototype.destroy.call(this);
 	}
 	,__class__: entities.PlatformerPlayer
+});
+entities.VerticalFlipper = function(xp,yp) {
+	StunningEntity.call(this,xp,yp);
+	this.upVect = new org.flixel.util.FlxPoint(0,200);
+	this.downVect = new org.flixel.util.FlxPoint(0,-200);
+	this.velocity = this.addEq(this.velocity,this.upVect);
+};
+$hxClasses["entities.VerticalFlipper"] = entities.VerticalFlipper;
+entities.VerticalFlipper.__name__ = ["entities","VerticalFlipper"];
+entities.VerticalFlipper.__super__ = StunningEntity;
+entities.VerticalFlipper.prototype = $extend(StunningEntity.prototype,{
+	__class__: entities.VerticalFlipper
 });
 var haxe = {}
 haxe.Timer = function() { }
@@ -11935,6 +12150,9 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/gfx/coin_tiles.png","assets/gfx/coin_tiles.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/coin_tiles.png",value);
+		nme.AssetData.path.set("assets/gfx/mapeditor_entities.png","assets/gfx/mapeditor_entities.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/mapeditor_entities.png",value);
 		nme.AssetData.path.set("assets/gfx/outDoor.png","assets/gfx/outDoor.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/outDoor.png",value);
@@ -11944,12 +12162,27 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/gfx/template_tiles.png","assets/gfx/template_tiles.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/template_tiles.png",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_baddies.csv","assets/maps/template/mapCSV_map_1_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_baddies.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_entities.csv","assets/maps/template/mapCSV_map_1_entities.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_entities.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_tiles.csv","assets/maps/template/mapCSV_map_1_tiles.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_baddies.csv","assets/maps/template/mapCSV_map_2_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_entities.csv","assets/maps/template/mapCSV_map_2_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_tiles.csv","assets/maps/template/mapCSV_map_2_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_baddies.csv","assets/maps/template/mapCSV_template_map_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_baddies.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_entities.csv","assets/maps/template/mapCSV_template_map_entities.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_entities.csv",value);
@@ -11962,6 +12195,12 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/maps/template/map_1.dam.bak","assets/maps/template/map_1.dam.bak");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/map_1.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_2.dam","assets/maps/template/map_2.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_2.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_2.dam.bak","assets/maps/template/map_2.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_2.dam.bak",value);
 		nme.AssetData.path.set("assets/maps/template/template_map.dam","assets/maps/template/template_map.dam");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/template_map.dam",value);
@@ -20955,8 +21194,10 @@ org.flixel.util.FlxTimer.prototype = {
 	,__properties__: {get_timeLeft:"get_timeLeft",get_loopsLeft:"get_loopsLeft",get_progress:"get_progress"}
 }
 var states = {}
-states.GameOverState = function() {
+states.GameOverState = function(msg) {
+	if(msg == null) msg = "You Ran Out Of Time!";
 	org.flixel.FlxState.call(this);
+	this.message = msg;
 };
 $hxClasses["states.GameOverState"] = states.GameOverState;
 states.GameOverState.__name__ = ["states","GameOverState"];
@@ -20977,7 +21218,7 @@ states.GameOverState.prototype = $extend(org.flixel.FlxState.prototype,{
 	}
 	,create: function() {
 		org.flixel.FlxState.prototype.create.call(this);
-		this.goverText = new org.flixel.FlxText(0,100,800,"You Ran Out Of Time!");
+		this.goverText = new org.flixel.FlxText(0,100,800,this.message);
 		this.goverText.setFormat(null,36,-256,"center");
 		this.spaceText = new org.flixel.FlxText(0,450,800,"press space to retry!");
 		this.spaceText.setFormat(null,24,-256,"center");
@@ -21028,15 +21269,35 @@ $hxClasses["states.PlatformerState"] = states.PlatformerState;
 states.PlatformerState.__name__ = ["states","PlatformerState"];
 states.PlatformerState.__super__ = org.flixel.FlxState;
 states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
-	playerOverCoin: function(pl,co) {
+	baddieHitWall: function(bd,w) {
+		switch(bd.type) {
+		case "StunningEntity":
+			var s = bd;
+			if(s.isGoingUp) {
+				s.isGoingUp = false;
+				s.velocity = s.addEq(s.velocity,s.upVect);
+			} else {
+				s.isGoingUp = true;
+				s.velocity = s.addEq(s.velocity,s.downVect);
+			}
+			break;
+		}
+	}
+	,playerHitBaddie: function(pl,bd) {
+		org.flixel.FlxG.switchState(new states.GameOverState("You Died!"));
+	}
+	,playerOverCoin: function(pl,co) {
 		co.exists = false;
 		this.timeRemaining += 30;
 	}
 	,playerOverDoor: function(pl,door) {
 		if(org.flixel.FlxG.keys.justPressed("DOWN")) {
+			door.allowCollisions = 0;
 			Util.log(this,"player over door");
 			Reg.roomIndex++;
-			if(Reg.roomIndex > Reg.levels.length) {
+			console.log("roomIndex " + Reg.roomIndex);
+			console.log("levels length " + Reg.levels.length);
+			if(Reg.roomIndex == Reg.levels.length) {
 				Util.log(this,"WIN!");
 				org.flixel.FlxG.switchState(new states.WinState());
 			} else org.flixel.FlxG.switchState(new states.PlatformerState(Reg.roomIndex));
@@ -21049,6 +21310,9 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		org.flixel.FlxG.overlap(this._player,this.door,$bind(this,this.playerOverDoor),null);
 		var coins = this._room.get_allCoins();
 		org.flixel.FlxG.overlap(this._player,coins,$bind(this,this.playerOverCoin),null);
+		var baddies = this._room.get_allBaddies();
+		org.flixel.FlxG.overlap(this._player,baddies,$bind(this,this.playerHitBaddie),org.flixel.FlxObject.separate);
+		org.flixel.FlxG.overlap(baddies,roomTiles,$bind(this,this.baddieHitWall),org.flixel.FlxObject.separate);
 	}
 	,keyHandling: function() {
 		if(org.flixel.FlxG.keys.justReleased("Q")) {
@@ -21060,7 +21324,7 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		org.flixel.FlxState.prototype.update.call(this);
 		this.doCollision();
 		this.timeRemaining--;
-		this.timeDisplay.set_text("time remaining : " + this.timeRemaining);
+		this.timeDisplay.set_text("time remaining : " + Math.ceil(this.timeRemaining / 30));
 		this.keyHandling();
 		if(this.timeRemaining <= 0) org.flixel.FlxG.switchState(new states.GameOverState());
 	}
@@ -21176,22 +21440,29 @@ flash.display.DisplayObject.RENDER_VALIDATE_IN_PROGRESS = 1024;
 flash.display.DisplayObject.ALL_RENDER_FLAGS = 98;
 Resourses.template_tiles = "assets/gfx/template_tiles.png";
 Resourses.template_entities = "assets/maps/template/mapCSV_template_map_entities.csv";
+Resourses.template_baddies = "assets/maps/template/mapCSV_template_map_baddies.csv";
 Resourses.map_1 = "assets/maps/template/mapCSV_map_1_tiles.csv";
 Resourses.map_1_entities = "assets/maps/template/mapCSV_map_1_entities.csv";
+Resourses.map_1_baddies = "assets/maps/template/mapCSV_map_1_baddies.csv";
+Resourses.map_2_tiles = "assets/maps/template/mapCSV_map_2_tiles.csv";
+Resourses.map_2_coins = "assets/maps/template/mapCSV_map_2_entities.csv";
+Resourses.map_2_baddies = "assets/maps/template/mapCSV_map_2_baddies.csv";
 Resourses.template_room = "assets/maps/template/mapCSV_template_map_tiles.csv";
 Resourses.template_doors = "assets/maps/template/mapCSV_template_map_doors.csv";
 Resourses.player_sprite = "assets/gfx/platformer_player.png";
 Resourses.door = "assets/gfx/outDoor.png";
 Resourses.coin = "assets/gfx/coin.png";
-Reg.levels = [Resourses.template_room,Resourses.map_1];
-Reg.entities = [Resourses.template_entities,Resourses.map_1_entities];
+Reg.levels = [Resourses.template_room,Resourses.map_1,Resourses.map_2_tiles];
+Reg.entities = [Resourses.template_entities,Resourses.map_1_entities,Resourses.map_2_coins];
+Reg.baddies = [Resourses.template_baddies,Resourses.map_1_baddies,Resourses.map_2_baddies];
 Reg.level = 0;
 Reg.scores = [];
 Reg.score = 0;
 Reg.saves = [];
-Reg.startPositions = [new flash.geom.Point(193,609),new flash.geom.Point(99,257)];
-Reg.doorPositions = [new flash.geom.Point(1280,672),new flash.geom.Point(801,257)];
+Reg.startPositions = [new flash.geom.Point(193,609),new flash.geom.Point(99,257),new flash.geom.Point(97,224)];
+Reg.doorPositions = [new flash.geom.Point(1280,672),new flash.geom.Point(801,257),new flash.geom.Point(544,544)];
 Reg.roomIndex = 0;
+Reg.playerPosition = new org.flixel.util.FlxPoint();
 org.flixel.FlxTypedGroup.ASCENDING = -1;
 org.flixel.FlxTypedGroup.DESCENDING = 1;
 org.flixel.FlxObject.SEPARATE_BIAS = 4;

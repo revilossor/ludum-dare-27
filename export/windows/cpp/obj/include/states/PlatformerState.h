@@ -7,6 +7,7 @@
 
 #include <org/flixel/FlxState.h>
 HX_DECLARE_CLASS0(Room)
+HX_DECLARE_CLASS1(entities,Entity)
 HX_DECLARE_CLASS1(entities,PlatformerPlayer)
 HX_DECLARE_CLASS2(org,flixel,FlxBasic)
 HX_DECLARE_CLASS2(org,flixel,FlxGroup)
@@ -39,7 +40,16 @@ class HXCPP_CLASS_ATTRIBUTES  PlatformerState_obj : public ::org::flixel::FlxSta
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("PlatformerState"); }
 
-		virtual Void playerOverDoor( ::org::flixel::FlxBasic pl,::org::flixel::FlxBasic door);
+		virtual Void baddieHitWall( ::entities::Entity bd,::org::flixel::FlxBasic w);
+		Dynamic baddieHitWall_dyn();
+
+		virtual Void playerHitBaddie( ::org::flixel::FlxBasic pl,::entities::Entity bd);
+		Dynamic playerHitBaddie_dyn();
+
+		virtual Void playerOverCoin( ::org::flixel::FlxBasic pl,::org::flixel::FlxSprite co);
+		Dynamic playerOverCoin_dyn();
+
+		virtual Void playerOverDoor( ::org::flixel::FlxBasic pl,::org::flixel::FlxSprite door);
 		Dynamic playerOverDoor_dyn();
 
 		virtual Void doCollision( );
@@ -59,6 +69,7 @@ class HXCPP_CLASS_ATTRIBUTES  PlatformerState_obj : public ::org::flixel::FlxSta
 
 		::org::flixel::FlxText timeDisplay;
 		int timeRemaining;
+		::org::flixel::FlxGroup timeplusses;
 		::entities::PlatformerPlayer _player;
 		::org::flixel::FlxSprite door;
 		::Room _room;

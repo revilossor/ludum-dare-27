@@ -40,8 +40,11 @@
    <depend name="include/Resourses.h"/>
    <depend name="include/Room.h"/>
    <depend name="include/Std.h"/>
+   <depend name="include/StunningEntity.h"/>
    <depend name="include/Util.h"/>
+   <depend name="include/entities/Entity.h"/>
    <depend name="include/entities/PlatformerPlayer.h"/>
+   <depend name="include/entities/TimePlusPlus.h"/>
    <depend name="include/flash/geom/Point.h"/>
    <depend name="include/haxe/Log.h"/>
    <depend name="include/org/flixel/FlxBasic.h"/>
@@ -65,6 +68,7 @@
    <depend name="include/states/WinState.h"/>
   </file>
   <file name="src/states/MenuState.cpp">
+   <depend name="include/Reg.h"/>
    <depend name="include/Util.h"/>
    <depend name="include/org/flixel/FlxBasic.h"/>
    <depend name="include/org/flixel/FlxG.h"/>
@@ -84,6 +88,7 @@
   </file>
   <file name="src/states/GameOverState.cpp">
    <depend name="include/Reg.h"/>
+   <depend name="include/Util.h"/>
    <depend name="include/org/flixel/FlxBasic.h"/>
    <depend name="include/org/flixel/FlxG.h"/>
    <depend name="include/org/flixel/FlxGroup.h"/>
@@ -1897,7 +1902,33 @@
    <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/openfl/utils/IMemoryRange.h"/>
   </file>
+  <file name="src/entities/VerticalFlipper.cpp">
+   <depend name="include/Resourses.h"/>
+   <depend name="include/StunningEntity.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/entities/VerticalFlipper.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/TimePlusPlus.cpp">
+   <depend name="include/Resourses.h"/>
+   <depend name="include/entities/TimePlusPlus.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/Spikes.cpp">
+   <depend name="include/Resourses.h"/>
+   <depend name="include/entities/Spikes.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+  </file>
   <file name="src/entities/PlatformerPlayer.cpp">
+   <depend name="include/Reg.h"/>
    <depend name="include/Resourses.h"/>
    <depend name="include/Util.h"/>
    <depend name="include/entities/PlatformerPlayer.h"/>
@@ -1908,6 +1939,105 @@
    <depend name="include/org/flixel/system/input/FlxInputStates.h"/>
    <depend name="include/org/flixel/system/input/FlxKeyboard.h"/>
    <depend name="include/org/flixel/system/input/IFlxInput.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/KillingEntity.cpp">
+   <depend name="include/Reg.h"/>
+   <depend name="include/Resourses.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/entities/KillingEntity.h"/>
+   <depend name="include/haxe/Log.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/HorizontalFlipper.cpp">
+   <depend name="include/Resourses.h"/>
+   <depend name="include/StunningEntity.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/entities/HorizontalFlipper.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/Coin.cpp">
+   <depend name="include/Resourses.h"/>
+   <depend name="include/entities/Coin.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+  </file>
+  <file name="src/entities/BouncingEntity.cpp">
+   <depend name="include/Reg.h"/>
+   <depend name="include/Resourses.h"/>
+   <depend name="include/entities/BouncingEntity.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/cpp/zip/Uncompress.cpp">
+   <depend name="include/cpp/Lib.h"/>
+   <depend name="include/cpp/zip/Flush.h"/>
+   <depend name="include/cpp/zip/Uncompress.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/cpp/zip/Flush.cpp">
+   <depend name="include/cpp/zip/Flush.h"/>
+  </file>
+  <file name="src/cpp/zip/Compress.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/cpp/Lib.h"/>
+   <depend name="include/cpp/zip/Compress.h"/>
+   <depend name="include/cpp/zip/Flush.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+  </file>
+  <file name="src/cpp/vm/Gc.cpp">
+   <depend name="include/cpp/vm/Gc.h"/>
+  </file>
+  <file name="src/cpp/rtti/FieldNumericIntegerLookup.cpp">
+   <depend name="include/cpp/rtti/FieldNumericIntegerLookup.h"/>
+  </file>
+  <file name="src/Xml.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/Xml.h"/>
+   <depend name="include/XmlType.h"/>
+  </file>
+  <file name="src/XmlType.cpp">
+   <depend name="include/XmlType.h"/>
+  </file>
+  <file name="src/Util.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/Util.h"/>
+   <depend name="include/haxe/Log.h"/>
+  </file>
+  <file name="src/Type.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/ValueType.cpp">
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/StunningEntity.cpp">
+   <depend name="include/StunningEntity.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
+  </file>
+  <file name="src/entities/Entity.cpp">
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/org/flixel/FlxBasic.h"/>
+   <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
    <depend name="include/org/flixel/util/FlxPoint.h"/>
   </file>
   <file name="src/org/flixel/FlxSprite.cpp">
@@ -1975,61 +2105,9 @@
    <depend name="include/org/flixel/util/FlxPoint.h"/>
    <depend name="include/org/flixel/util/FlxRect.h"/>
   </file>
-  <file name="src/org/flixel/util/FlxPoint.cpp">
-   <depend name="include/StringTools.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/flash/geom/Point.h"/>
-   <depend name="include/org/flixel/util/FlxPoint.h"/>
-  </file>
   <file name="src/org/flixel/util/FlxRect.cpp">
    <depend name="include/flash/geom/Rectangle.h"/>
    <depend name="include/org/flixel/util/FlxRect.h"/>
-  </file>
-  <file name="src/cpp/zip/Uncompress.cpp">
-   <depend name="include/cpp/Lib.h"/>
-   <depend name="include/cpp/zip/Flush.h"/>
-   <depend name="include/cpp/zip/Uncompress.h"/>
-   <depend name="include/haxe/io/Bytes.h"/>
-   <depend name="include/haxe/io/BytesBuffer.h"/>
-   <depend name="include/haxe/io/Error.h"/>
-  </file>
-  <file name="src/cpp/zip/Flush.cpp">
-   <depend name="include/cpp/zip/Flush.h"/>
-  </file>
-  <file name="src/cpp/zip/Compress.cpp">
-   <depend name="include/Std.h"/>
-   <depend name="include/cpp/Lib.h"/>
-   <depend name="include/cpp/zip/Compress.h"/>
-   <depend name="include/cpp/zip/Flush.h"/>
-   <depend name="include/haxe/io/Bytes.h"/>
-  </file>
-  <file name="src/cpp/vm/Gc.cpp">
-   <depend name="include/cpp/vm/Gc.h"/>
-  </file>
-  <file name="src/cpp/rtti/FieldNumericIntegerLookup.cpp">
-   <depend name="include/cpp/rtti/FieldNumericIntegerLookup.h"/>
-  </file>
-  <file name="src/Xml.cpp">
-   <depend name="include/Reflect.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/Xml.h"/>
-   <depend name="include/XmlType.h"/>
-  </file>
-  <file name="src/XmlType.cpp">
-   <depend name="include/XmlType.h"/>
-  </file>
-  <file name="src/Util.cpp">
-   <depend name="include/Std.h"/>
-   <depend name="include/Util.h"/>
-   <depend name="include/haxe/Log.h"/>
-  </file>
-  <file name="src/Type.cpp">
-   <depend name="include/Reflect.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/ValueType.h"/>
-  </file>
-  <file name="src/ValueType.cpp">
-   <depend name="include/ValueType.h"/>
   </file>
   <file name="src/StringTools.cpp">
    <depend name="include/StringTools.h"/>
@@ -2038,14 +2116,25 @@
    <depend name="include/StringBuf.h"/>
   </file>
   <file name="src/Room.cpp">
+   <depend name="include/EReg.h"/>
    <depend name="include/Reg.h"/>
    <depend name="include/Resourses.h"/>
    <depend name="include/Room.h"/>
+   <depend name="include/StunningEntity.h"/>
    <depend name="include/Util.h"/>
+   <depend name="include/entities/BouncingEntity.h"/>
+   <depend name="include/entities/Coin.h"/>
+   <depend name="include/entities/Entity.h"/>
+   <depend name="include/entities/HorizontalFlipper.h"/>
+   <depend name="include/entities/KillingEntity.h"/>
+   <depend name="include/entities/Spikes.h"/>
+   <depend name="include/entities/VerticalFlipper.h"/>
+   <depend name="include/flash/geom/Point.h"/>
    <depend name="include/openfl/Assets.h"/>
    <depend name="include/org/flixel/FlxBasic.h"/>
    <depend name="include/org/flixel/FlxGroup.h"/>
    <depend name="include/org/flixel/FlxObject.h"/>
+   <depend name="include/org/flixel/FlxSprite.h"/>
    <depend name="include/org/flixel/FlxTilemap.h"/>
    <depend name="include/org/flixel/FlxTypedGroup.h"/>
   </file>
@@ -2091,12 +2180,19 @@
    <depend name="include/Resourses.h"/>
    <depend name="include/flash/geom/Point.h"/>
    <depend name="include/org/flixel/FlxSave.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
   </file>
-  <file name="src/Resourses.cpp">
-   <depend name="include/Resourses.h"/>
+  <file name="src/org/flixel/util/FlxPoint.cpp">
+   <depend name="include/StringTools.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/flash/geom/Point.h"/>
+   <depend name="include/org/flixel/util/FlxPoint.h"/>
   </file>
   <file name="src/flash/geom/Point.cpp">
    <depend name="include/flash/geom/Point.h"/>
+  </file>
+  <file name="src/Resourses.cpp">
+   <depend name="include/Resourses.h"/>
   </file>
   <file name="src/Reflect.cpp">
    <depend name="include/Reflect.h"/>
@@ -2186,6 +2282,12 @@
    <depend name="include/org/flixel/util/FlxPoint.h"/>
    <depend name="include/org/flixel/util/FlxRandom.h"/>
    <depend name="include/org/flixel/util/FlxTimer.h"/>
+  </file>
+  <file name="src/EReg.cpp">
+   <depend name="include/EReg.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringBuf.h"/>
+   <depend name="include/cpp/Lib.h"/>
   </file>
   <file name="src/Date.cpp">
    <depend name="include/Date.h"/>

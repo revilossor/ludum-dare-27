@@ -11,9 +11,13 @@ class VerticalFlipper extends StunningEntity
 	public function new(xp, yp) 
 	{
 		super(xp, yp);
-		upVect = new FlxPoint(0, 200);
-		downVect = new FlxPoint(0, -200);
-		velocity = addEq(velocity,upVect);
+		upVect = new FlxPoint(0, 100);
+		downVect = new FlxPoint(0, -100);
+		velocity = addEq(velocity, upVect);
+		loadGraphic(Resourses.vflip, true, false, 32, 32);
+		addAnimation("spin", [0, 1], 32);
+		play("spin");
 	}
+
 	
 }

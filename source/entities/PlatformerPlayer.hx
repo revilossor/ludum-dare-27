@@ -18,14 +18,17 @@ class PlatformerPlayer extends FlxSprite
 	override public function new(xp:UInt, yp:UInt):Void
 	{
 		super(xp, yp);
-		loadGraphic(Resourses.player_sprite, false, false, 16, 30);
-		maxVelocity = new FlxPoint(500, 800);
-		acceleration = new FlxPoint(0, 500);
-		drag = new FlxPoint(50, 50);
+		loadGraphic(Resourses.player_sprite, true, true, 16, 30);
+		addAnimation("stand", [0]);
+		addAnimation("run", [1, 2, 3, 2], 16);
+		addAnimation("jump", [4]);
+		maxVelocity = new FlxPoint(300, 900);
+		acceleration = new FlxPoint(0, 700);
+		drag = new FlxPoint(100, 50);
 		onFloor = false;
-	//	scale.x = scale.y = 1.2;
 		set_forceComplexRender(true);
 		jumpTimer = 10;
+		play("stand");
 	}
 	override public function destroy():Void
 	{
@@ -40,33 +43,36 @@ class PlatformerPlayer extends FlxSprite
 	private function keyHandling():Void
 	{
 		if (FlxG.keys.pressed("LEFT")) {
-			velocity.x -= 10;
+			velocity.x -= 20;
+			facing = FlxObject.LEFT;
 		}
 		if (FlxG.keys.pressed("RIGHT")) {
-			velocity.x += 10;
+			velocity.x += 20;
+			facing = FlxObject.RIGHT;
 		}
 		if (onFloor) {
 			jumpTimer = 10;
-			if (FlxG.keys.justPressed("UP")) {
+			if (FlxG.keys.justPressed("UP")||FlxG.keys.justPressed("SPACE")) {
 				Util.log(this, "start jump");
 				y -= 3;
 				jumpTimer--;
-				velocity.y = -maxVelocity.y/10;
+				velocity.y = -Math.abs(velocity.y * 1.1);
 			}
 		}
-		if (FlxG.keys.pressed("UP") && jumpTimer > 0) {
-			velocity.y -= maxVelocity.y / 20;
+		if ((FlxG.keys.pressed("UP")||FlxG.keys.pressed("SPACE")) && jumpTimer > 0) {
+			velocity.y -= 50 ;
 			jumpTimer--;
 		}
-		if (FlxG.keys.justReleased("UP") || jumpTimer <= 0) {
-			Util.log(this, "end jump");
+		if ((FlxG.keys.justReleased("UP")||FlxG.keys.justReleased("SPACE")) || jumpTimer <= 0) {
 			isJumping = false;
-			
 		}
-		if (FlxG.keys.pressed("DOWN")) {
-			// ???
+		if (velocity.y < 0) {
+			play("jump");
+		}else if (Math.abs(velocity.x) < 20 ) {
+			play("stand");
+		}else {
+			play("run");
 		}
-		
 		
 		
 	}

@@ -3,6 +3,9 @@
 #ifndef INCLUDED_Reg
 #include <Reg.h>
 #endif
+#ifndef INCLUDED_Util
+#include <Util.h>
+#endif
 #ifndef INCLUDED_org_flixel_FlxBasic
 #include <org/flixel/FlxBasic.h>
 #endif
@@ -44,12 +47,15 @@
 #endif
 namespace states{
 
-Void GameOverState_obj::__construct()
+Void GameOverState_obj::__construct(::String __o_msg)
 {
-HX_STACK_PUSH("GameOverState::new","states/GameOverState.hx",18);
+HX_STACK_PUSH("GameOverState::new","states/GameOverState.hx",19);
+::String msg = __o_msg.Default(HX_CSTRING("You Ran Out Of Time!"));
 {
-	HX_STACK_LINE(18)
+	HX_STACK_LINE(20)
 	super::__construct();
+	HX_STACK_LINE(21)
+	this->message = msg;
 }
 ;
 	return null();
@@ -58,23 +64,25 @@ HX_STACK_PUSH("GameOverState::new","states/GameOverState.hx",18);
 GameOverState_obj::~GameOverState_obj() { }
 
 Dynamic GameOverState_obj::__CreateEmpty() { return  new GameOverState_obj; }
-hx::ObjectPtr< GameOverState_obj > GameOverState_obj::__new()
+hx::ObjectPtr< GameOverState_obj > GameOverState_obj::__new(::String __o_msg)
 {  hx::ObjectPtr< GameOverState_obj > result = new GameOverState_obj();
-	result->__construct();
+	result->__construct(__o_msg);
 	return result;}
 
 Dynamic GameOverState_obj::__Create(hx::DynamicArray inArgs)
 {  hx::ObjectPtr< GameOverState_obj > result = new GameOverState_obj();
-	result->__construct();
+	result->__construct(inArgs[0]);
 	return result;}
 
 Void GameOverState_obj::keyHandling( ){
 {
-		HX_STACK_PUSH("GameOverState::keyHandling","states/GameOverState.hx",41);
+		HX_STACK_PUSH("GameOverState::keyHandling","states/GameOverState.hx",43);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(43)
 		if ((::org::flixel::FlxG_obj::keys->justPressed(HX_CSTRING("SPACE")))){
-			HX_STACK_LINE(42)
+			HX_STACK_LINE(45)
+			::Util_obj::log(hx::ObjectPtr<OBJ_>(this),HX_CSTRING("retry"));
+			HX_STACK_LINE(46)
 			::org::flixel::FlxG_obj::switchState(::states::PlatformerState_obj::__new(::Reg_obj::roomIndex));
 		}
 	}
@@ -86,11 +94,11 @@ HX_DEFINE_DYNAMIC_FUNC0(GameOverState_obj,keyHandling,(void))
 
 Void GameOverState_obj::update( ){
 {
-		HX_STACK_PUSH("GameOverState::update","states/GameOverState.hx",36);
+		HX_STACK_PUSH("GameOverState::update","states/GameOverState.hx",38);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(39)
 		this->super::update();
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(40)
 		this->keyHandling();
 	}
 return null();
@@ -99,9 +107,9 @@ return null();
 
 Void GameOverState_obj::destroy( ){
 {
-		HX_STACK_PUSH("GameOverState::destroy","states/GameOverState.hx",32);
+		HX_STACK_PUSH("GameOverState::destroy","states/GameOverState.hx",34);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(32)
+		HX_STACK_LINE(34)
 		this->super::destroy();
 	}
 return null();
@@ -110,21 +118,21 @@ return null();
 
 Void GameOverState_obj::create( ){
 {
-		HX_STACK_PUSH("GameOverState::create","states/GameOverState.hx",22);
+		HX_STACK_PUSH("GameOverState::create","states/GameOverState.hx",24);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(23)
-		this->super::create();
-		HX_STACK_LINE(24)
-		this->goverText = ::org::flixel::FlxText_obj::__new((int)0,(int)100,(int)800,HX_CSTRING("You Ran Out Of Time!"),null(),null(),null());
 		HX_STACK_LINE(25)
-		this->goverText->setFormat(null(),(int)36,(int)-256,HX_CSTRING("center"),null(),null());
+		this->super::create();
 		HX_STACK_LINE(26)
-		this->spaceText = ::org::flixel::FlxText_obj::__new((int)0,(int)450,(int)800,HX_CSTRING("press space to retry!"),null(),null(),null());
+		this->goverText = ::org::flixel::FlxText_obj::__new((int)0,(int)100,(int)800,this->message,null(),null(),null());
 		HX_STACK_LINE(27)
-		this->spaceText->setFormat(null(),(int)24,(int)-256,HX_CSTRING("center"),null(),null());
+		this->goverText->setFormat(null(),(int)36,(int)-256,HX_CSTRING("center"),null(),null());
 		HX_STACK_LINE(28)
-		this->add(this->goverText);
+		this->spaceText = ::org::flixel::FlxText_obj::__new((int)0,(int)450,(int)800,HX_CSTRING("press space to retry!"),null(),null(),null());
 		HX_STACK_LINE(29)
+		this->spaceText->setFormat(null(),(int)24,(int)-256,HX_CSTRING("center"),null(),null());
+		HX_STACK_LINE(30)
+		this->add(this->goverText);
+		HX_STACK_LINE(31)
 		this->add(this->spaceText);
 	}
 return null();
@@ -139,6 +147,7 @@ GameOverState_obj::GameOverState_obj()
 void GameOverState_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(GameOverState);
+	HX_MARK_MEMBER_NAME(message,"message");
 	HX_MARK_MEMBER_NAME(spaceText,"spaceText");
 	HX_MARK_MEMBER_NAME(goverText,"goverText");
 	super::__Mark(HX_MARK_ARG);
@@ -147,6 +156,7 @@ void GameOverState_obj::__Mark(HX_MARK_PARAMS)
 
 void GameOverState_obj::__Visit(HX_VISIT_PARAMS)
 {
+	HX_VISIT_MEMBER_NAME(message,"message");
 	HX_VISIT_MEMBER_NAME(spaceText,"spaceText");
 	HX_VISIT_MEMBER_NAME(goverText,"goverText");
 	super::__Visit(HX_VISIT_ARG);
@@ -161,6 +171,7 @@ Dynamic GameOverState_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"destroy") ) { return destroy_dyn(); }
+		if (HX_FIELD_EQ(inName,"message") ) { return message; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"spaceText") ) { return spaceText; }
@@ -175,6 +186,9 @@ Dynamic GameOverState_obj::__Field(const ::String &inName,bool inCallProp)
 Dynamic GameOverState_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool inCallProp)
 {
 	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"message") ) { message=inValue.Cast< ::String >(); return inValue; }
+		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"spaceText") ) { spaceText=inValue.Cast< ::org::flixel::FlxText >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"goverText") ) { goverText=inValue.Cast< ::org::flixel::FlxText >(); return inValue; }
@@ -184,6 +198,7 @@ Dynamic GameOverState_obj::__SetField(const ::String &inName,const Dynamic &inVa
 
 void GameOverState_obj::__GetFields(Array< ::String> &outFields)
 {
+	outFields->push(HX_CSTRING("message"));
 	outFields->push(HX_CSTRING("spaceText"));
 	outFields->push(HX_CSTRING("goverText"));
 	super::__GetFields(outFields);
@@ -197,6 +212,7 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("update"),
 	HX_CSTRING("destroy"),
 	HX_CSTRING("create"),
+	HX_CSTRING("message"),
 	HX_CSTRING("spaceText"),
 	HX_CSTRING("goverText"),
 	String(null()) };

@@ -11,9 +11,11 @@ class BouncingEntity extends Entity
 	public function new(xp, yp) 
 	{
 		super(xp, yp);
-		makeGraphic(32, 32, 0xff0000ff);
+		loadGraphic(Resourses.spinnerseeker, true, false, 32, 32);
+		addAnimation("spin", [0, 1], 32);
+		play("spin");
 		type = "BouncingEntity";
-		speed = 175;
+		speed = 125;
 	}
 	override public function update():Void
 	{
@@ -24,6 +26,7 @@ class BouncingEntity extends Entity
 			var seekVect:FlxPoint = seekAtSpeed(myMidpoint, Reg.playerPosition, speed);
 			velocity.x = seekVect.x;
 			velocity.y = seekVect.y;
+			angle++;
 		}else {
 			velocity.x *= 0.9;
 			velocity.y *= 0.9;
