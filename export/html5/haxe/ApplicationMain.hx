@@ -220,12 +220,27 @@ class ApplicationMain {
 		
 		
 		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/bg_tile.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
 		loaders.set("assets/gfx/coin.png", loader);
 		total ++;
 		
 		
 		var loader:Loader = new Loader();
 		loaders.set("assets/gfx/coin_tiles.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/horizkiller.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/horizontalkiller.png", loader);
 		total ++;
 		
 		
@@ -245,13 +260,44 @@ class ApplicationMain {
 		
 		
 		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/player.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/spikes.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/sponnerkiller.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
 		loaders.set("assets/gfx/template_tiles.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/time++.png", loader);
+		total ++;
+		
+		
+		var loader:Loader = new Loader();
+		loaders.set("assets/gfx/vertkiller.png", loader);
 		total ++;
 		
 		
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_map_1_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_1_bg.csv", urlLoader);
 		total ++;
 		
 		
@@ -275,6 +321,12 @@ class ApplicationMain {
 		
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_2_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_map_2_entities.csv", urlLoader);
 		total ++;
 		
@@ -287,7 +339,181 @@ class ApplicationMain {
 		
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_3_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_3_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_3_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_3_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_4_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_4_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_4_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_4_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_5_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_5_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_5_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_5_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_6_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_6_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_6_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_6_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_7_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_7_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_7_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_7_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_8_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_8_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_8_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_8_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_9_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_9_bg.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_9_entities.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_map_9_tiles.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/mapCSV_template_map_baddies.csv", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/mapCSV_template_map_bg.csv", urlLoader);
 		total ++;
 		
 		
@@ -324,6 +550,90 @@ class ApplicationMain {
 		var urlLoader:URLLoader = new URLLoader();
 		urlLoader.dataFormat = BINARY;
 		urlLoaders.set("assets/maps/template/map_2.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_3.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_3.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_4.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_4.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_5.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_5.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_6.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_6.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_7.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_7.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_8.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_8.dam.bak", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_9.dam", urlLoader);
+		total ++;
+		
+		
+		var urlLoader:URLLoader = new URLLoader();
+		urlLoader.dataFormat = BINARY;
+		urlLoaders.set("assets/maps/template/map_9.dam.bak", urlLoader);
 		total ++;
 		
 		

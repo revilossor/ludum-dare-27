@@ -120,22 +120,46 @@ ApplicationMain.main = function() {
 	ApplicationMain.loaders.set("assets/data/vis/bounds.png",loader31);
 	ApplicationMain.total++;
 	var loader32 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/coin.png",loader32);
+	ApplicationMain.loaders.set("assets/gfx/bg_tile.png",loader32);
 	ApplicationMain.total++;
 	var loader33 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/coin_tiles.png",loader33);
+	ApplicationMain.loaders.set("assets/gfx/coin.png",loader33);
 	ApplicationMain.total++;
 	var loader34 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/mapeditor_entities.png",loader34);
+	ApplicationMain.loaders.set("assets/gfx/coin_tiles.png",loader34);
 	ApplicationMain.total++;
 	var loader35 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader35);
+	ApplicationMain.loaders.set("assets/gfx/horizkiller.png",loader35);
 	ApplicationMain.total++;
 	var loader36 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader36);
+	ApplicationMain.loaders.set("assets/gfx/horizontalkiller.png",loader36);
 	ApplicationMain.total++;
 	var loader37 = new flash.display.Loader();
-	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader37);
+	ApplicationMain.loaders.set("assets/gfx/mapeditor_entities.png",loader37);
+	ApplicationMain.total++;
+	var loader38 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/outDoor.png",loader38);
+	ApplicationMain.total++;
+	var loader39 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/platformer_player.png",loader39);
+	ApplicationMain.total++;
+	var loader40 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/player.png",loader40);
+	ApplicationMain.total++;
+	var loader41 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/spikes.png",loader41);
+	ApplicationMain.total++;
+	var loader42 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/sponnerkiller.png",loader42);
+	ApplicationMain.total++;
+	var loader43 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/template_tiles.png",loader43);
+	ApplicationMain.total++;
+	var loader44 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/time++.png",loader44);
+	ApplicationMain.total++;
+	var loader45 = new flash.display.Loader();
+	ApplicationMain.loaders.set("assets/gfx/vertkiller.png",loader45);
 	ApplicationMain.total++;
 	var urlLoader = new flash.net.URLLoader();
 	urlLoader.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
@@ -143,59 +167,239 @@ ApplicationMain.main = function() {
 	ApplicationMain.total++;
 	var urlLoader1 = new flash.net.URLLoader();
 	urlLoader1.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv",urlLoader1);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_bg.csv",urlLoader1);
 	ApplicationMain.total++;
 	var urlLoader2 = new flash.net.URLLoader();
 	urlLoader2.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader2);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_entities.csv",urlLoader2);
 	ApplicationMain.total++;
 	var urlLoader3 = new flash.net.URLLoader();
 	urlLoader3.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_baddies.csv",urlLoader3);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_1_tiles.csv",urlLoader3);
 	ApplicationMain.total++;
 	var urlLoader4 = new flash.net.URLLoader();
 	urlLoader4.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_entities.csv",urlLoader4);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_baddies.csv",urlLoader4);
 	ApplicationMain.total++;
 	var urlLoader5 = new flash.net.URLLoader();
 	urlLoader5.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_tiles.csv",urlLoader5);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_bg.csv",urlLoader5);
 	ApplicationMain.total++;
 	var urlLoader6 = new flash.net.URLLoader();
 	urlLoader6.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_baddies.csv",urlLoader6);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_entities.csv",urlLoader6);
 	ApplicationMain.total++;
 	var urlLoader7 = new flash.net.URLLoader();
 	urlLoader7.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv",urlLoader7);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_2_tiles.csv",urlLoader7);
 	ApplicationMain.total++;
 	var urlLoader8 = new flash.net.URLLoader();
 	urlLoader8.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader8);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_3_baddies.csv",urlLoader8);
 	ApplicationMain.total++;
 	var urlLoader9 = new flash.net.URLLoader();
 	urlLoader9.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader9);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_3_bg.csv",urlLoader9);
 	ApplicationMain.total++;
 	var urlLoader10 = new flash.net.URLLoader();
 	urlLoader10.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader10);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_3_entities.csv",urlLoader10);
 	ApplicationMain.total++;
 	var urlLoader11 = new flash.net.URLLoader();
 	urlLoader11.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam",urlLoader11);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_3_tiles.csv",urlLoader11);
 	ApplicationMain.total++;
 	var urlLoader12 = new flash.net.URLLoader();
 	urlLoader12.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam.bak",urlLoader12);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_4_baddies.csv",urlLoader12);
 	ApplicationMain.total++;
 	var urlLoader13 = new flash.net.URLLoader();
 	urlLoader13.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader13);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_4_bg.csv",urlLoader13);
 	ApplicationMain.total++;
 	var urlLoader14 = new flash.net.URLLoader();
 	urlLoader14.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
-	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader14);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_4_entities.csv",urlLoader14);
+	ApplicationMain.total++;
+	var urlLoader15 = new flash.net.URLLoader();
+	urlLoader15.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_4_tiles.csv",urlLoader15);
+	ApplicationMain.total++;
+	var urlLoader16 = new flash.net.URLLoader();
+	urlLoader16.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_5_baddies.csv",urlLoader16);
+	ApplicationMain.total++;
+	var urlLoader17 = new flash.net.URLLoader();
+	urlLoader17.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_5_bg.csv",urlLoader17);
+	ApplicationMain.total++;
+	var urlLoader18 = new flash.net.URLLoader();
+	urlLoader18.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_5_entities.csv",urlLoader18);
+	ApplicationMain.total++;
+	var urlLoader19 = new flash.net.URLLoader();
+	urlLoader19.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_5_tiles.csv",urlLoader19);
+	ApplicationMain.total++;
+	var urlLoader20 = new flash.net.URLLoader();
+	urlLoader20.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_6_baddies.csv",urlLoader20);
+	ApplicationMain.total++;
+	var urlLoader21 = new flash.net.URLLoader();
+	urlLoader21.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_6_bg.csv",urlLoader21);
+	ApplicationMain.total++;
+	var urlLoader22 = new flash.net.URLLoader();
+	urlLoader22.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_6_entities.csv",urlLoader22);
+	ApplicationMain.total++;
+	var urlLoader23 = new flash.net.URLLoader();
+	urlLoader23.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_6_tiles.csv",urlLoader23);
+	ApplicationMain.total++;
+	var urlLoader24 = new flash.net.URLLoader();
+	urlLoader24.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_7_baddies.csv",urlLoader24);
+	ApplicationMain.total++;
+	var urlLoader25 = new flash.net.URLLoader();
+	urlLoader25.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_7_bg.csv",urlLoader25);
+	ApplicationMain.total++;
+	var urlLoader26 = new flash.net.URLLoader();
+	urlLoader26.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_7_entities.csv",urlLoader26);
+	ApplicationMain.total++;
+	var urlLoader27 = new flash.net.URLLoader();
+	urlLoader27.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_7_tiles.csv",urlLoader27);
+	ApplicationMain.total++;
+	var urlLoader28 = new flash.net.URLLoader();
+	urlLoader28.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_8_baddies.csv",urlLoader28);
+	ApplicationMain.total++;
+	var urlLoader29 = new flash.net.URLLoader();
+	urlLoader29.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_8_bg.csv",urlLoader29);
+	ApplicationMain.total++;
+	var urlLoader30 = new flash.net.URLLoader();
+	urlLoader30.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_8_entities.csv",urlLoader30);
+	ApplicationMain.total++;
+	var urlLoader31 = new flash.net.URLLoader();
+	urlLoader31.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_8_tiles.csv",urlLoader31);
+	ApplicationMain.total++;
+	var urlLoader32 = new flash.net.URLLoader();
+	urlLoader32.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_9_baddies.csv",urlLoader32);
+	ApplicationMain.total++;
+	var urlLoader33 = new flash.net.URLLoader();
+	urlLoader33.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_9_bg.csv",urlLoader33);
+	ApplicationMain.total++;
+	var urlLoader34 = new flash.net.URLLoader();
+	urlLoader34.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_9_entities.csv",urlLoader34);
+	ApplicationMain.total++;
+	var urlLoader35 = new flash.net.URLLoader();
+	urlLoader35.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_map_9_tiles.csv",urlLoader35);
+	ApplicationMain.total++;
+	var urlLoader36 = new flash.net.URLLoader();
+	urlLoader36.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_baddies.csv",urlLoader36);
+	ApplicationMain.total++;
+	var urlLoader37 = new flash.net.URLLoader();
+	urlLoader37.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_bg.csv",urlLoader37);
+	ApplicationMain.total++;
+	var urlLoader38 = new flash.net.URLLoader();
+	urlLoader38.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_entities.csv",urlLoader38);
+	ApplicationMain.total++;
+	var urlLoader39 = new flash.net.URLLoader();
+	urlLoader39.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/mapCSV_template_map_tiles.csv",urlLoader39);
+	ApplicationMain.total++;
+	var urlLoader40 = new flash.net.URLLoader();
+	urlLoader40.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam",urlLoader40);
+	ApplicationMain.total++;
+	var urlLoader41 = new flash.net.URLLoader();
+	urlLoader41.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_1.dam.bak",urlLoader41);
+	ApplicationMain.total++;
+	var urlLoader42 = new flash.net.URLLoader();
+	urlLoader42.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam",urlLoader42);
+	ApplicationMain.total++;
+	var urlLoader43 = new flash.net.URLLoader();
+	urlLoader43.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_2.dam.bak",urlLoader43);
+	ApplicationMain.total++;
+	var urlLoader44 = new flash.net.URLLoader();
+	urlLoader44.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_3.dam",urlLoader44);
+	ApplicationMain.total++;
+	var urlLoader45 = new flash.net.URLLoader();
+	urlLoader45.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_3.dam.bak",urlLoader45);
+	ApplicationMain.total++;
+	var urlLoader46 = new flash.net.URLLoader();
+	urlLoader46.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_4.dam",urlLoader46);
+	ApplicationMain.total++;
+	var urlLoader47 = new flash.net.URLLoader();
+	urlLoader47.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_4.dam.bak",urlLoader47);
+	ApplicationMain.total++;
+	var urlLoader48 = new flash.net.URLLoader();
+	urlLoader48.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_5.dam",urlLoader48);
+	ApplicationMain.total++;
+	var urlLoader49 = new flash.net.URLLoader();
+	urlLoader49.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_5.dam.bak",urlLoader49);
+	ApplicationMain.total++;
+	var urlLoader50 = new flash.net.URLLoader();
+	urlLoader50.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_6.dam",urlLoader50);
+	ApplicationMain.total++;
+	var urlLoader51 = new flash.net.URLLoader();
+	urlLoader51.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_6.dam.bak",urlLoader51);
+	ApplicationMain.total++;
+	var urlLoader52 = new flash.net.URLLoader();
+	urlLoader52.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_7.dam",urlLoader52);
+	ApplicationMain.total++;
+	var urlLoader53 = new flash.net.URLLoader();
+	urlLoader53.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_7.dam.bak",urlLoader53);
+	ApplicationMain.total++;
+	var urlLoader54 = new flash.net.URLLoader();
+	urlLoader54.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_8.dam",urlLoader54);
+	ApplicationMain.total++;
+	var urlLoader55 = new flash.net.URLLoader();
+	urlLoader55.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_8.dam.bak",urlLoader55);
+	ApplicationMain.total++;
+	var urlLoader56 = new flash.net.URLLoader();
+	urlLoader56.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_9.dam",urlLoader56);
+	ApplicationMain.total++;
+	var urlLoader57 = new flash.net.URLLoader();
+	urlLoader57.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/map_9.dam.bak",urlLoader57);
+	ApplicationMain.total++;
+	var urlLoader58 = new flash.net.URLLoader();
+	urlLoader58.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam",urlLoader58);
+	ApplicationMain.total++;
+	var urlLoader59 = new flash.net.URLLoader();
+	urlLoader59.set_dataFormat(flash.net.URLLoaderDataFormat.BINARY);
+	ApplicationMain.urlLoaders.set("assets/maps/template/template_map.dam.bak",urlLoader59);
 	ApplicationMain.total++;
 	var resourcePrefix = "NME_:bitmap_";
 	var _g = 0, _g1 = haxe.Resource.listNames();
@@ -214,16 +418,16 @@ ApplicationMain.main = function() {
 		var $it0 = ApplicationMain.loaders.keys();
 		while( $it0.hasNext() ) {
 			var path = $it0.next();
-			var loader38 = ApplicationMain.loaders.get(path);
-			loader38.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
-			loader38.load(new flash.net.URLRequest(path));
+			var loader46 = ApplicationMain.loaders.get(path);
+			loader46.contentLoaderInfo.addEventListener("complete",ApplicationMain.loader_onComplete);
+			loader46.load(new flash.net.URLRequest(path));
 		}
 		var $it1 = ApplicationMain.urlLoaders.keys();
 		while( $it1.hasNext() ) {
 			var path = $it1.next();
-			var urlLoader15 = ApplicationMain.urlLoaders.get(path);
-			urlLoader15.addEventListener("complete",ApplicationMain.loader_onComplete);
-			urlLoader15.load(new flash.net.URLRequest(path));
+			var urlLoader60 = ApplicationMain.urlLoaders.get(path);
+			urlLoader60.addEventListener("complete",ApplicationMain.loader_onComplete);
+			urlLoader60.load(new flash.net.URLRequest(path));
 		}
 	}
 }
@@ -2636,6 +2840,8 @@ var Room = function(i) {
 	this.index = i;
 	this._tiles = new org.flixel.FlxTilemap();
 	this.get__tiles().loadMap(openfl.Assets.getText(Reg.levels[this.index]),Resourses.template_tiles,32,32);
+	this._bg = new org.flixel.FlxTilemap();
+	this._bg.loadMap(openfl.Assets.getText(Reg.bgs[this.index]),Resourses.bg_tiles,32,32);
 	this.addItems();
 	this.width = this.get__tiles().width;
 	this.height = this.get__tiles().height;
@@ -2680,7 +2886,7 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 			if(xIndex == this.get__tiles().widthInTiles - 1) yIndex++;
 			xIndex = n % this.get__tiles().widthInTiles;
 			var thisDrawPoint = new flash.geom.Point(xIndex * 32,yIndex * 32);
-			if(entityData[n] == "1") this.get_allBaddies().add(new entities.KillingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "2") this.get_allBaddies().add(new entities.BouncingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "3") this.get_allBaddies().add(new entities.HorizontalFlipper(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "4") this.get_allBaddies().add(new entities.VerticalFlipper(thisDrawPoint.x,thisDrawPoint.y));
+			if(entityData[n] == "1") this.get_allBaddies().add(new entities.KillingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "2") this.get_allBaddies().add(new entities.BouncingEntity(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "3") this.get_allBaddies().add(new entities.HorizontalFlipper(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "4") this.get_allBaddies().add(new entities.VerticalFlipper(thisDrawPoint.x,thisDrawPoint.y)); else if(entityData[n] == "5") this.get_allBaddies().add(new entities.Spikes(thisDrawPoint.x,thisDrawPoint.y + 20));
 		}
 		this.add(this.get_allBaddies());
 	}
@@ -2704,6 +2910,7 @@ Room.prototype = $extend(org.flixel.FlxGroup.prototype,{
 	}
 	,addItems: function() {
 		Util.log(this,"adding tiles");
+		this.add(this._bg);
 		this.add(this.get__tiles());
 		this.addCoins();
 		this.addBaddies();
@@ -4479,9 +4686,11 @@ Xml.prototype = {
 }
 entities.BouncingEntity = function(xp,yp) {
 	entities.Entity.call(this,xp,yp);
-	this.makeGraphic(32,32,-16776961);
+	this.loadGraphic(Resourses.spinnerseeker,true,false,32,32);
+	this.addAnimation("spin",[0,1],32);
+	this.play("spin");
 	this.type = "BouncingEntity";
-	this.speed = 175;
+	this.speed = 125;
 };
 $hxClasses["entities.BouncingEntity"] = entities.BouncingEntity;
 entities.BouncingEntity.__name__ = ["entities","BouncingEntity"];
@@ -4495,6 +4704,7 @@ entities.BouncingEntity.prototype = $extend(entities.Entity.prototype,{
 			var seekVect = this.seekAtSpeed(myMidpoint,Reg.playerPosition,this.speed);
 			this.velocity.x = seekVect.x;
 			this.velocity.y = seekVect.y;
+			this.angle++;
 		} else {
 			this.velocity.x *= 0.9;
 			this.velocity.y *= 0.9;
@@ -4504,7 +4714,9 @@ entities.BouncingEntity.prototype = $extend(entities.Entity.prototype,{
 });
 entities.Coin = function(xp,yp) {
 	org.flixel.FlxSprite.call(this,xp,yp);
-	this.loadGraphic(Resourses.coin,false,false,16,16);
+	this.loadGraphic(Resourses.coin,true,false,16,16);
+	this.addAnimation("spin",[0,1,2,3,4,3,2,1,0],8);
+	this.play("spin");
 };
 $hxClasses["entities.Coin"] = entities.Coin;
 entities.Coin.__name__ = ["entities","Coin"];
@@ -4517,9 +4729,12 @@ entities.Coin.prototype = $extend(org.flixel.FlxSprite.prototype,{
 });
 entities.HorizontalFlipper = function(xp,yp) {
 	StunningEntity.call(this,xp,yp);
-	this.upVect = new org.flixel.util.FlxPoint(200,0);
-	this.downVect = new org.flixel.util.FlxPoint(-200,0);
+	this.upVect = new org.flixel.util.FlxPoint(100,0);
+	this.downVect = new org.flixel.util.FlxPoint(-100,0);
 	this.velocity = this.addEq(this.velocity,this.upVect);
+	this.loadGraphic(Resourses.hflip,true,false,32,32);
+	this.addAnimation("spin",[0,1],32);
+	this.play("spin");
 };
 $hxClasses["entities.HorizontalFlipper"] = entities.HorizontalFlipper;
 entities.HorizontalFlipper.__name__ = ["entities","HorizontalFlipper"];
@@ -4529,7 +4744,10 @@ entities.HorizontalFlipper.prototype = $extend(StunningEntity.prototype,{
 });
 entities.KillingEntity = function(xp,yp) {
 	entities.Entity.call(this,xp,yp);
-	this.makeGraphic(32,32,-65281);
+	this.loadGraphic(Resourses.horizontalkiller,true,true,32,32);
+	this.addAnimation("hunt",[0,1],8);
+	this.addAnimation("idle",[0]);
+	this.play("idle");
 	this.type = "KillingEntity";
 	this.speed = 150;
 	this.acceleration = new org.flixel.util.FlxPoint(0,500);
@@ -4542,49 +4760,66 @@ entities.KillingEntity.prototype = $extend(entities.Entity.prototype,{
 		entities.Entity.prototype.update.call(this);
 		var myMidpoint = this.getMidpoint(null);
 		var distToPlayer = this.getDistanceBetween(myMidpoint,Reg.playerPosition);
-		if(distToPlayer < 400) {
+		if(distToPlayer < 200) {
 			var seekVect = this.seekAtSpeed(myMidpoint,Reg.playerPosition,this.speed);
 			this.velocity.x = seekVect.x;
-		} else this.velocity.x *= 0.9;
+			if(seekVect.x < 0) {
+				console.log("left");
+				this.set_facing(16);
+			} else if(seekVect.x > 0) {
+				console.log("right");
+				this.set_facing(1);
+			}
+			this.play("hunt");
+		} else {
+			this.play("idle");
+			this.velocity.x *= 0.9;
+		}
 	}
 	,__class__: entities.KillingEntity
 });
 entities.PlatformerPlayer = function(xp,yp) {
 	org.flixel.FlxSprite.call(this,xp,yp);
-	this.loadGraphic(Resourses.player_sprite,false,false,16,30);
-	this.maxVelocity = new org.flixel.util.FlxPoint(500,800);
-	this.acceleration = new org.flixel.util.FlxPoint(0,500);
-	this.drag = new org.flixel.util.FlxPoint(50,50);
+	this.loadGraphic(Resourses.player_sprite,true,true,16,30);
+	this.addAnimation("stand",[0]);
+	this.addAnimation("run",[1,2,3,2],16);
+	this.addAnimation("jump",[4]);
+	this.maxVelocity = new org.flixel.util.FlxPoint(300,900);
+	this.acceleration = new org.flixel.util.FlxPoint(0,700);
+	this.drag = new org.flixel.util.FlxPoint(100,50);
 	this.onFloor = false;
 	this.set_forceComplexRender(true);
 	this.jumpTimer = 10;
+	this.play("stand");
 };
 $hxClasses["entities.PlatformerPlayer"] = entities.PlatformerPlayer;
 entities.PlatformerPlayer.__name__ = ["entities","PlatformerPlayer"];
 entities.PlatformerPlayer.__super__ = org.flixel.FlxSprite;
 entities.PlatformerPlayer.prototype = $extend(org.flixel.FlxSprite.prototype,{
 	keyHandling: function() {
-		if(org.flixel.FlxG.keys.pressed("LEFT")) this.velocity.x -= 10;
-		if(org.flixel.FlxG.keys.pressed("RIGHT")) this.velocity.x += 10;
+		if(org.flixel.FlxG.keys.pressed("LEFT")) {
+			this.velocity.x -= 20;
+			this.set_facing(1);
+		}
+		if(org.flixel.FlxG.keys.pressed("RIGHT")) {
+			this.velocity.x += 20;
+			this.set_facing(16);
+		}
 		if(this.onFloor) {
 			this.jumpTimer = 10;
-			if(org.flixel.FlxG.keys.justPressed("UP")) {
+			if(org.flixel.FlxG.keys.justPressed("UP") || org.flixel.FlxG.keys.justPressed("SPACE")) {
 				Util.log(this,"start jump");
 				this.y -= 3;
 				this.jumpTimer--;
-				this.velocity.y = -this.maxVelocity.y / 10;
+				this.velocity.y = -Math.abs(this.velocity.y * 1.1);
 			}
 		}
-		if(org.flixel.FlxG.keys.pressed("UP") && this.jumpTimer > 0) {
-			this.velocity.y -= this.maxVelocity.y / 20;
+		if((org.flixel.FlxG.keys.pressed("UP") || org.flixel.FlxG.keys.pressed("SPACE")) && this.jumpTimer > 0) {
+			this.velocity.y -= 50;
 			this.jumpTimer--;
 		}
-		if(org.flixel.FlxG.keys.justReleased("UP") || this.jumpTimer <= 0) {
-			Util.log(this,"end jump");
-			this.isJumping = false;
-		}
-		if(org.flixel.FlxG.keys.pressed("DOWN")) {
-		}
+		if(org.flixel.FlxG.keys.justReleased("UP") || org.flixel.FlxG.keys.justReleased("SPACE") || this.jumpTimer <= 0) this.isJumping = false;
+		if(this.velocity.y < 0) this.play("jump"); else if(Math.abs(this.velocity.x) < 20) this.play("stand"); else this.play("run");
 	}
 	,update: function() {
 		org.flixel.FlxSprite.prototype.update.call(this);
@@ -4596,11 +4831,42 @@ entities.PlatformerPlayer.prototype = $extend(org.flixel.FlxSprite.prototype,{
 	}
 	,__class__: entities.PlatformerPlayer
 });
+entities.Spikes = function(xp,yp) {
+	org.flixel.FlxSprite.call(this,xp,yp);
+	this.loadGraphic(Resourses.spikes,false,false,32,12);
+	this.immovable = true;
+	this.type = "spike";
+};
+$hxClasses["entities.Spikes"] = entities.Spikes;
+entities.Spikes.__name__ = ["entities","Spikes"];
+entities.Spikes.__super__ = org.flixel.FlxSprite;
+entities.Spikes.prototype = $extend(org.flixel.FlxSprite.prototype,{
+	__class__: entities.Spikes
+});
+entities.TimePlusPlus = function(xp,yp) {
+	org.flixel.FlxSprite.call(this,xp,yp);
+	this.loadGraphic(Resourses.tpp,false,false,36,7);
+};
+$hxClasses["entities.TimePlusPlus"] = entities.TimePlusPlus;
+entities.TimePlusPlus.__name__ = ["entities","TimePlusPlus"];
+entities.TimePlusPlus.__super__ = org.flixel.FlxSprite;
+entities.TimePlusPlus.prototype = $extend(org.flixel.FlxSprite.prototype,{
+	update: function() {
+		this.scale.x = this.scale.y *= 1.1;
+		var _g = this;
+		_g.set_alpha(_g.alpha * 0.9);
+		if(this.alpha < 0.3) this.exists = false;
+	}
+	,__class__: entities.TimePlusPlus
+});
 entities.VerticalFlipper = function(xp,yp) {
 	StunningEntity.call(this,xp,yp);
-	this.upVect = new org.flixel.util.FlxPoint(0,200);
-	this.downVect = new org.flixel.util.FlxPoint(0,-200);
+	this.upVect = new org.flixel.util.FlxPoint(0,100);
+	this.downVect = new org.flixel.util.FlxPoint(0,-100);
 	this.velocity = this.addEq(this.velocity,this.upVect);
+	this.loadGraphic(Resourses.vflip,true,false,32,32);
+	this.addAnimation("spin",[0,1],32);
+	this.play("spin");
 };
 $hxClasses["entities.VerticalFlipper"] = entities.VerticalFlipper;
 entities.VerticalFlipper.__name__ = ["entities","VerticalFlipper"];
@@ -12144,12 +12410,21 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/data/vis/bounds.png","assets/data/vis/bounds.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/data/vis/bounds.png",value);
+		nme.AssetData.path.set("assets/gfx/bg_tile.png","assets/gfx/bg_tile.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/bg_tile.png",value);
 		nme.AssetData.path.set("assets/gfx/coin.png","assets/gfx/coin.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/coin.png",value);
 		nme.AssetData.path.set("assets/gfx/coin_tiles.png","assets/gfx/coin_tiles.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/coin_tiles.png",value);
+		nme.AssetData.path.set("assets/gfx/horizkiller.png","assets/gfx/horizkiller.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/horizkiller.png",value);
+		nme.AssetData.path.set("assets/gfx/horizontalkiller.png","assets/gfx/horizontalkiller.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/horizontalkiller.png",value);
 		nme.AssetData.path.set("assets/gfx/mapeditor_entities.png","assets/gfx/mapeditor_entities.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/mapeditor_entities.png",value);
@@ -12159,12 +12434,30 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/gfx/platformer_player.png","assets/gfx/platformer_player.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/platformer_player.png",value);
+		nme.AssetData.path.set("assets/gfx/player.png","assets/gfx/player.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/player.png",value);
+		nme.AssetData.path.set("assets/gfx/spikes.png","assets/gfx/spikes.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/spikes.png",value);
+		nme.AssetData.path.set("assets/gfx/sponnerkiller.png","assets/gfx/sponnerkiller.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/sponnerkiller.png",value);
 		nme.AssetData.path.set("assets/gfx/template_tiles.png","assets/gfx/template_tiles.png");
 		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
 		nme.AssetData.type.set("assets/gfx/template_tiles.png",value);
+		nme.AssetData.path.set("assets/gfx/time++.png","assets/gfx/time++.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/time++.png",value);
+		nme.AssetData.path.set("assets/gfx/vertkiller.png","assets/gfx/vertkiller.png");
+		var value = Reflect.field(openfl.AssetType,"image".toUpperCase());
+		nme.AssetData.type.set("assets/gfx/vertkiller.png",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_baddies.csv","assets/maps/template/mapCSV_map_1_baddies.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_bg.csv","assets/maps/template/mapCSV_map_1_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_bg.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_1_entities.csv","assets/maps/template/mapCSV_map_1_entities.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_1_entities.csv",value);
@@ -12174,15 +12467,105 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_baddies.csv","assets/maps/template/mapCSV_map_2_baddies.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_bg.csv","assets/maps/template/mapCSV_map_2_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_bg.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_entities.csv","assets/maps/template/mapCSV_map_2_entities.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_entities.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_map_2_tiles.csv","assets/maps/template/mapCSV_map_2_tiles.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_map_2_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_3_baddies.csv","assets/maps/template/mapCSV_map_3_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_3_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_3_bg.csv","assets/maps/template/mapCSV_map_3_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_3_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_3_entities.csv","assets/maps/template/mapCSV_map_3_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_3_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_3_tiles.csv","assets/maps/template/mapCSV_map_3_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_3_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_4_baddies.csv","assets/maps/template/mapCSV_map_4_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_4_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_4_bg.csv","assets/maps/template/mapCSV_map_4_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_4_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_4_entities.csv","assets/maps/template/mapCSV_map_4_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_4_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_4_tiles.csv","assets/maps/template/mapCSV_map_4_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_4_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_5_baddies.csv","assets/maps/template/mapCSV_map_5_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_5_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_5_bg.csv","assets/maps/template/mapCSV_map_5_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_5_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_5_entities.csv","assets/maps/template/mapCSV_map_5_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_5_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_5_tiles.csv","assets/maps/template/mapCSV_map_5_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_5_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_6_baddies.csv","assets/maps/template/mapCSV_map_6_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_6_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_6_bg.csv","assets/maps/template/mapCSV_map_6_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_6_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_6_entities.csv","assets/maps/template/mapCSV_map_6_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_6_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_6_tiles.csv","assets/maps/template/mapCSV_map_6_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_6_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_7_baddies.csv","assets/maps/template/mapCSV_map_7_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_7_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_7_bg.csv","assets/maps/template/mapCSV_map_7_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_7_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_7_entities.csv","assets/maps/template/mapCSV_map_7_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_7_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_7_tiles.csv","assets/maps/template/mapCSV_map_7_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_7_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_8_baddies.csv","assets/maps/template/mapCSV_map_8_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_8_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_8_bg.csv","assets/maps/template/mapCSV_map_8_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_8_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_8_entities.csv","assets/maps/template/mapCSV_map_8_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_8_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_8_tiles.csv","assets/maps/template/mapCSV_map_8_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_8_tiles.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_9_baddies.csv","assets/maps/template/mapCSV_map_9_baddies.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_9_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_9_bg.csv","assets/maps/template/mapCSV_map_9_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_9_bg.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_9_entities.csv","assets/maps/template/mapCSV_map_9_entities.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_9_entities.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_map_9_tiles.csv","assets/maps/template/mapCSV_map_9_tiles.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_map_9_tiles.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_baddies.csv","assets/maps/template/mapCSV_template_map_baddies.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_baddies.csv",value);
+		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_bg.csv","assets/maps/template/mapCSV_template_map_bg.csv");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_bg.csv",value);
 		nme.AssetData.path.set("assets/maps/template/mapCSV_template_map_entities.csv","assets/maps/template/mapCSV_template_map_entities.csv");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/mapCSV_template_map_entities.csv",value);
@@ -12201,6 +12584,48 @@ nme.AssetData.initialize = function() {
 		nme.AssetData.path.set("assets/maps/template/map_2.dam.bak","assets/maps/template/map_2.dam.bak");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/map_2.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_3.dam","assets/maps/template/map_3.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_3.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_3.dam.bak","assets/maps/template/map_3.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_3.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_4.dam","assets/maps/template/map_4.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_4.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_4.dam.bak","assets/maps/template/map_4.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_4.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_5.dam","assets/maps/template/map_5.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_5.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_5.dam.bak","assets/maps/template/map_5.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_5.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_6.dam","assets/maps/template/map_6.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_6.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_6.dam.bak","assets/maps/template/map_6.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_6.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_7.dam","assets/maps/template/map_7.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_7.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_7.dam.bak","assets/maps/template/map_7.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_7.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_8.dam","assets/maps/template/map_8.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_8.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_8.dam.bak","assets/maps/template/map_8.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_8.dam.bak",value);
+		nme.AssetData.path.set("assets/maps/template/map_9.dam","assets/maps/template/map_9.dam");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_9.dam",value);
+		nme.AssetData.path.set("assets/maps/template/map_9.dam.bak","assets/maps/template/map_9.dam.bak");
+		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
+		nme.AssetData.type.set("assets/maps/template/map_9.dam.bak",value);
 		nme.AssetData.path.set("assets/maps/template/template_map.dam","assets/maps/template/template_map.dam");
 		var value = Reflect.field(openfl.AssetType,"text".toUpperCase());
 		nme.AssetData.type.set("assets/maps/template/template_map.dam",value);
@@ -21284,11 +21709,14 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		}
 	}
 	,playerHitBaddie: function(pl,bd) {
-		org.flixel.FlxG.switchState(new states.GameOverState("You Died!"));
+		if(bd.type == "spike") {
+			if(this._player.y < bd.y - 29) org.flixel.FlxG.switchState(new states.GameOverState("You Were Spiked By A Spike!"));
+		} else org.flixel.FlxG.switchState(new states.GameOverState("You Died!"));
 	}
 	,playerOverCoin: function(pl,co) {
 		co.exists = false;
 		this.timeRemaining += 30;
+		this.timeplusses.add(new entities.TimePlusPlus(co.x - 15,co.y - 16));
 	}
 	,playerOverDoor: function(pl,door) {
 		if(org.flixel.FlxG.keys.justPressed("DOWN")) {
@@ -21313,11 +21741,15 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		var baddies = this._room.get_allBaddies();
 		org.flixel.FlxG.overlap(this._player,baddies,$bind(this,this.playerHitBaddie),org.flixel.FlxObject.separate);
 		org.flixel.FlxG.overlap(baddies,roomTiles,$bind(this,this.baddieHitWall),org.flixel.FlxObject.separate);
+		org.flixel.FlxG.overlap(baddies,baddies,$bind(this,this.baddieHitWall),org.flixel.FlxObject.separate);
 	}
 	,keyHandling: function() {
 		if(org.flixel.FlxG.keys.justReleased("Q")) {
-			Reg.roomIndex = this.index;
-			org.flixel.FlxG.switchState(new states.WinState());
+			Reg.roomIndex++;
+			if(Reg.roomIndex == Reg.levels.length) {
+				Util.log(this,"WIN!");
+				org.flixel.FlxG.switchState(new states.WinState());
+			} else org.flixel.FlxG.switchState(new states.PlatformerState(Reg.roomIndex));
 		}
 	}
 	,update: function() {
@@ -21337,6 +21769,7 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 		this.door = new org.flixel.FlxSprite(thisDoorPosition.x,thisDoorPosition.y,Resourses.door);
 		this.door.scrollFactor = new org.flixel.util.FlxPoint(1,1);
 		this.add(this.door);
+		this.add(this.timeplusses);
 		this.add(this._player);
 		this.timeDisplay = new org.flixel.FlxText(0,0,800,"init",36);
 		this.timeDisplay.setFormat(null,36,-256,"left");
@@ -21346,6 +21779,7 @@ states.PlatformerState.prototype = $extend(org.flixel.FlxState.prototype,{
 	,create: function() {
 		org.flixel.FlxState.prototype.create.call(this);
 		org.flixel.FlxG.set_bgColor(-16777216);
+		this.timeplusses = new org.flixel.FlxGroup();
 		this._room = new Room(this.index);
 		var playerStart = Reg.startPositions[this.index];
 		Util.log(this,"player start at " + Std.string(playerStart));
@@ -21439,6 +21873,7 @@ flash.display.DisplayObject.BOUNDS_INVALID = 64;
 flash.display.DisplayObject.RENDER_VALIDATE_IN_PROGRESS = 1024;
 flash.display.DisplayObject.ALL_RENDER_FLAGS = 98;
 Resourses.template_tiles = "assets/gfx/template_tiles.png";
+Resourses.bg_tiles = "assets/gfx/bg_tile.png";
 Resourses.template_entities = "assets/maps/template/mapCSV_template_map_entities.csv";
 Resourses.template_baddies = "assets/maps/template/mapCSV_template_map_baddies.csv";
 Resourses.map_1 = "assets/maps/template/mapCSV_map_1_tiles.csv";
@@ -21447,20 +21882,58 @@ Resourses.map_1_baddies = "assets/maps/template/mapCSV_map_1_baddies.csv";
 Resourses.map_2_tiles = "assets/maps/template/mapCSV_map_2_tiles.csv";
 Resourses.map_2_coins = "assets/maps/template/mapCSV_map_2_entities.csv";
 Resourses.map_2_baddies = "assets/maps/template/mapCSV_map_2_baddies.csv";
+Resourses.map_3_tiles = "assets/maps/template/mapCSV_map_3_tiles.csv";
+Resourses.map_3_coins = "assets/maps/template/mapCSV_map_3_entities.csv";
+Resourses.map_3_baddies = "assets/maps/template/mapCSV_map_3_baddies.csv";
+Resourses.map_4_tiles = "assets/maps/template/mapCSV_map_4_tiles.csv";
+Resourses.map_4_coins = "assets/maps/template/mapCSV_map_4_entities.csv";
+Resourses.map_4_baddies = "assets/maps/template/mapCSV_map_4_baddies.csv";
+Resourses.map_5_tiles = "assets/maps/template/mapCSV_map_5_tiles.csv";
+Resourses.map_5_coins = "assets/maps/template/mapCSV_map_5_entities.csv";
+Resourses.map_5_baddies = "assets/maps/template/mapCSV_map_5_baddies.csv";
+Resourses.map_6_tiles = "assets/maps/template/mapCSV_map_6_tiles.csv";
+Resourses.map_6_coins = "assets/maps/template/mapCSV_map_6_entities.csv";
+Resourses.map_6_baddies = "assets/maps/template/mapCSV_map_6_baddies.csv";
+Resourses.map_7_tiles = "assets/maps/template/mapCSV_map_7_tiles.csv";
+Resourses.map_7_coins = "assets/maps/template/mapCSV_map_7_entities.csv";
+Resourses.map_7_baddies = "assets/maps/template/mapCSV_map_7_baddies.csv";
+Resourses.map_8_tiles = "assets/maps/template/mapCSV_map_8_tiles.csv";
+Resourses.map_8_coins = "assets/maps/template/mapCSV_map_8_entities.csv";
+Resourses.map_8_baddies = "assets/maps/template/mapCSV_map_8_baddies.csv";
+Resourses.map_9_tiles = "assets/maps/template/mapCSV_map_9_tiles.csv";
+Resourses.map_9_coins = "assets/maps/template/mapCSV_map_9_entities.csv";
+Resourses.map_9_baddies = "assets/maps/template/mapCSV_map_9_baddies.csv";
+Resourses.template_map_bg = "assets/maps/template/mapCSV_template_map_bg.csv";
+Resourses.map_1_bg = "assets/maps/template/mapCSV_map_1_bg.csv";
+Resourses.map_2_bg = "assets/maps/template/mapCSV_map_2_bg.csv";
+Resourses.map_3_bg = "assets/maps/template/mapCSV_map_3_bg.csv";
+Resourses.map_4_bg = "assets/maps/template/mapCSV_map_4_bg.csv";
+Resourses.map_5_bg = "assets/maps/template/mapCSV_map_5_bg.csv";
+Resourses.map_6_bg = "assets/maps/template/mapCSV_map_6_bg.csv";
+Resourses.map_7_bg = "assets/maps/template/mapCSV_map_7_bg.csv";
+Resourses.map_8_bg = "assets/maps/template/mapCSV_map_8_bg.csv";
+Resourses.map_9_bg = "assets/maps/template/mapCSV_map_9_bg.csv";
 Resourses.template_room = "assets/maps/template/mapCSV_template_map_tiles.csv";
 Resourses.template_doors = "assets/maps/template/mapCSV_template_map_doors.csv";
-Resourses.player_sprite = "assets/gfx/platformer_player.png";
 Resourses.door = "assets/gfx/outDoor.png";
 Resourses.coin = "assets/gfx/coin.png";
-Reg.levels = [Resourses.template_room,Resourses.map_1,Resourses.map_2_tiles];
-Reg.entities = [Resourses.template_entities,Resourses.map_1_entities,Resourses.map_2_coins];
-Reg.baddies = [Resourses.template_baddies,Resourses.map_1_baddies,Resourses.map_2_baddies];
+Resourses.spikes = "assets/gfx/spikes.png";
+Resourses.horizontalkiller = "assets/gfx/horizontalkiller.png";
+Resourses.spinnerseeker = "assets/gfx/sponnerkiller.png";
+Resourses.hflip = "assets/gfx/horizkiller.png";
+Resourses.vflip = "assets/gfx/vertkiller.png";
+Resourses.player_sprite = "assets/gfx/player.png";
+Resourses.tpp = "assets/gfx/time++.png";
+Reg.levels = [Resourses.template_room,Resourses.map_1,Resourses.map_2_tiles,Resourses.map_3_tiles,Resourses.map_4_tiles,Resourses.map_5_tiles,Resourses.map_6_tiles,Resourses.map_7_tiles,Resourses.map_8_tiles,Resourses.map_9_tiles];
+Reg.bgs = [Resourses.template_map_bg,Resourses.map_1_bg,Resourses.map_2_bg,Resourses.map_3_bg,Resourses.map_4_bg,Resourses.map_5_bg,Resourses.map_6_bg,Resourses.map_7_bg,Resourses.map_8_bg,Resourses.map_9_bg];
+Reg.entities = [Resourses.template_entities,Resourses.map_1_entities,Resourses.map_2_coins,Resourses.map_3_coins,Resourses.map_4_coins,Resourses.map_5_coins,Resourses.map_6_coins,Resourses.map_7_coins,Resourses.map_8_coins,Resourses.map_9_coins];
+Reg.baddies = [Resourses.template_baddies,Resourses.map_1_baddies,Resourses.map_2_baddies,Resourses.map_3_baddies,Resourses.map_4_baddies,Resourses.map_5_baddies,Resourses.map_6_baddies,Resourses.map_7_baddies,Resourses.map_8_baddies,Resourses.map_9_baddies];
 Reg.level = 0;
 Reg.scores = [];
 Reg.score = 0;
 Reg.saves = [];
-Reg.startPositions = [new flash.geom.Point(193,609),new flash.geom.Point(99,257),new flash.geom.Point(97,224)];
-Reg.doorPositions = [new flash.geom.Point(1280,672),new flash.geom.Point(801,257),new flash.geom.Point(544,544)];
+Reg.startPositions = [new flash.geom.Point(32,160),new flash.geom.Point(64,96),new flash.geom.Point(64,128),new flash.geom.Point(64,128),new flash.geom.Point(64,192),new flash.geom.Point(128,256),new flash.geom.Point(34,128),new flash.geom.Point(36,256),new flash.geom.Point(64,192),new flash.geom.Point(97,160)];
+Reg.doorPositions = [new flash.geom.Point(256,160),new flash.geom.Point(3072,96),new flash.geom.Point(64,224),new flash.geom.Point(128,1216),new flash.geom.Point(896,192),new flash.geom.Point(896,416),new flash.geom.Point(544,512),new flash.geom.Point(1505,129),new flash.geom.Point(576,896),new flash.geom.Point(864,898)];
 Reg.roomIndex = 0;
 Reg.playerPosition = new org.flixel.util.FlxPoint();
 org.flixel.FlxTypedGroup.ASCENDING = -1;
